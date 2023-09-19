@@ -1,0 +1,41 @@
+header {
+  height: 50px;
+  padding: 0;
+  background: #0000b7;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#logo {
+  width: 200px;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+#header-title {
+  padding-left: 1rem;
+}
+
+.main-wrapper {
+  position: absolute;
+  top: 50px;
+  width: 100%;
+  height: calc(100% - 50px);
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+}
+
+nav {
+  background: grey;
+  width: 200px;
+}
+
+main {
+  background: darkgrey;
+  flex-grow: 1;
+  padding: 1rem;
+}
