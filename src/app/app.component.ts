@@ -4,6 +4,7 @@ import {RouterOutlet} from '@angular/router';
 import {SidenavComponent} from "./features/sidenav/component/sidenav.component";
 import {SidenavContainerComponent} from "./features/sidenav/container/sidenav-container.component";
 import {SnippetsContainerComponent} from "./features/snippets/container/snippets-container.component";
+import {HeaderComponent} from "./features/header/component/header.component";
 
 @Component({
   selector: 'app-root',
@@ -13,7 +14,8 @@ import {SnippetsContainerComponent} from "./features/snippets/container/snippets
     RouterOutlet,
     SidenavComponent,
     SidenavContainerComponent,
-    SnippetsContainerComponent
+    SnippetsContainerComponent,
+    HeaderComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']

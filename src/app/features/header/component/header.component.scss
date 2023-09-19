@@ -1,0 +1,27 @@
+header {
+  height: 50px;
+  padding: 0;
+  background: #0000b7;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#logo {
+  width: 200px;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+#header-title {
+  //padding-left: 1rem;
+}
+
+.justify-between {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
