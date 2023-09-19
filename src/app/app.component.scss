@@ -11,6 +11,10 @@
 nav {
   background: grey;
   min-width: 200px;
+  &.hideNav {
+    min-width: 0;
+    max-width: 0;
+  }
 }
 
 main {
