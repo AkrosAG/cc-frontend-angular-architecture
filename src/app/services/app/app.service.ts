@@ -10,7 +10,6 @@ export class AppService {
   hideNav$ = this.router.events.pipe(
     filter(e => e instanceof NavigationEnd),
     map((e: NavigationEnd) => e.url === '/login'),
-    tap(hideNav => console.log(hideNav)),
   );
 
   constructor(

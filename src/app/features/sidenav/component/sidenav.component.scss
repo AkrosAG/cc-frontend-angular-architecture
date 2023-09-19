@@ -8,6 +8,7 @@ ul {
     border-top: 1px black solid;
     border-bottom: 1px black solid;
     cursor: pointer;
+    white-space: nowrap;
     &:hover {
       background: #a6a6a6;
     }
