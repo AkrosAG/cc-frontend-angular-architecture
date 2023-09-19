@@ -31,11 +31,16 @@ header {
 
 nav {
   background: grey;
-  width: 200px;
+  min-width: 200px;
 }
 
 main {
   background: darkgrey;
   flex-grow: 1;
   padding: 1rem;
+  h1 {
+    margin-top: 0;
+  }
+
+  overflow: auto;
 }
