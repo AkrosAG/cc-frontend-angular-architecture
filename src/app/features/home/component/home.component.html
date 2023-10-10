@@ -1,0 +1,10 @@
+<h1>My Snippets</h1>
+<form class="add-snippet" [formGroup]="addSnippetForm" (submit)="onSubmit()">
+  <span>Add Snippet</span>
+  <input type="text" placeholder="title" formControlName="title">
+  <textarea placeholder="Content" formControlName="content"></textarea>
+  <input type="submit" value="Save" [disabled]="!addSnippetForm.valid">
+</form>
+<div class="snippets-container">
+  <app-snippet *ngFor="let snippet of snippets" [snippet]="snippet" />
+</div>
