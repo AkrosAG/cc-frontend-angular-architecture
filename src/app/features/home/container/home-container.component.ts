@@ -15,6 +15,6 @@ import {HomeComponent} from "../component/home.component";
   `,
   styles: []
 })
-export class HomePageContainerComponent {
+export class HomeContainerComponent {
   constructor(public snippetsService: HomeService) {}
 }
