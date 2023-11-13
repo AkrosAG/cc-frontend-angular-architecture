@@ -4,7 +4,7 @@ import {HomeService} from "../service/home.service";
 import {HomeComponent} from "../component/home.component";
 
 @Component({
-  selector: 'app-home-page',
+  selector: 'app-home-container',
   standalone: true,
   imports: [CommonModule, HomeComponent],
   template: `
