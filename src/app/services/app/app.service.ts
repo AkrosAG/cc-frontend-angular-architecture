@@ -1,19 +1,15 @@
-import {Injectable} from '@angular/core';
-import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
-import {filter, map, tap} from "rxjs";
+import { Injectable } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter, map } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AppService {
-
   hideNav$ = this.router.events.pipe(
-    filter(e => e instanceof NavigationEnd),
+    filter((e) => e instanceof NavigationEnd),
     map((e: NavigationEnd) => e.url === '/login'),
   );
 
-  constructor(
-    private router: Router,
-  ) {}
-
+  constructor(private router: Router) {}
 }

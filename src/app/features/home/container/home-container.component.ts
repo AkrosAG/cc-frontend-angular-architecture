@@ -1,7 +1,7 @@
-import {Component} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {HomeService} from "../service/home.service";
-import {HomeComponent} from "../component/home.component";
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { HomeService } from '../service/home.service';
+import { HomeComponent } from '../component/home.component';
 
 @Component({
   selector: 'app-home-container',
@@ -13,7 +13,7 @@ import {HomeComponent} from "../component/home.component";
       (addSnippet)="snippetsService.addSnippet($event)"
     />
   `,
-  styles: []
+  styles: [],
 })
 export class HomeContainerComponent {
   constructor(public snippetsService: HomeService) {}

@@ -15,14 +15,15 @@
   border: 1px black solid;
   border-radius: 5px;
 
-  input, textarea {
+  input,
+  textarea {
     padding: 0.5em;
     border-radius: 5px;
     border: 1px black solid;
     outline: none;
   }
 
-  input[type=submit] {
+  input[type="submit"] {
     align-self: flex-start;
     border: none;
     cursor: pointer;

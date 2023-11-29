@@ -1,7 +1,7 @@
-import type {Meta, StoryObj} from '@storybook/angular';
-import {moduleMetadata} from '@storybook/angular';
-import {CommonModule} from '@angular/common';
-import {SnippetComponent} from "../snippet.component";
+import type { Meta, StoryObj } from '@storybook/angular';
+import { moduleMetadata } from '@storybook/angular';
+import { CommonModule } from '@angular/common';
+import { SnippetComponent } from '../snippet.component';
 
 const meta: Meta<SnippetComponent> = {
   title: 'ccAngularArchitecutre/Snippets',
@@ -26,5 +26,5 @@ export const Default: Story = {
   }),
 };
 Default.args = {
-  snippet: {title: 'Title', content: 'Lorem ipsum'}
+  snippet: { title: 'Title', content: 'Lorem ipsum' },
 };

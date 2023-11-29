@@ -8,7 +8,7 @@ describe('SnippetComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [SnippetComponent]
+      imports: [SnippetComponent],
     });
     fixture = TestBed.createComponent(SnippetComponent);
     component = fixture.componentInstance;

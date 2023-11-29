@@ -1,17 +1,24 @@
+// @import "@assets/variables.scss";
+@import "./src/assets/variables.scss";
+
 .main-wrapper {
   position: absolute;
-  top: 50px;
+  top: 84px;
   width: 100%;
-  height: calc(100% - 50px);
+  height: calc(100% - 84px);
   display: flex;
   flex-direction: row;
   align-items: stretch;
 }
 
 nav {
-  background: grey;
+  background: $secondary-background;
   min-width: 200px;
-  transition: min-width 0.5s, max-width 0.5s;
+  transition:
+    min-width 0.5s,
+    max-width 0.5s;
+  margin-right: 2px;
+  box-shadow: 5px 0px 12px -11px #000000;
   &.hideNav {
     min-width: 0;
     max-width: 0;
@@ -19,7 +26,7 @@ nav {
 }
 
 main {
-  background: darkgrey;
+  background: $white;
   flex-grow: 1;
   padding: 1rem;
   h1 {

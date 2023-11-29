@@ -1,7 +1,7 @@
-import {Component} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {SidenavComponent} from "../component/sidenav.component";
-import {SidenavService} from "../service/sidenav.service";
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { SidenavComponent } from '../component/sidenav.component';
+import { SidenavService } from '../service/sidenav.service';
 
 @Component({
   selector: 'app-sidenav-container',
@@ -10,8 +10,7 @@ import {SidenavService} from "../service/sidenav.service";
   template: `
     <app-sidenav [navItems]="this.sidenavService.navItems$ | async" />
   `,
-  styles: [
-  ]
+  styles: [],
 })
 export class SidenavContainerComponent {
   constructor(public sidenavService: SidenavService) {}
