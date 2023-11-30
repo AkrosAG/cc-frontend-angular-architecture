@@ -1,3 +1,6 @@
+// @import "@assets/variables.scss";
+@import "./src/assets/variables.scss";
+
 ul {
   padding: 0;
   li {
@@ -9,8 +12,16 @@ ul {
     border-bottom: 1px black solid;
     cursor: pointer;
     white-space: nowrap;
+    transition: 0.6s;
     &:hover {
       background: #a6a6a6;
+    }
+    &.selected {
+      font-weight: bold;
+      background: $nav-selected-item;
+    }
+    &.sub-item {
+      padding: 0.6em 2em;
     }
   }
 }

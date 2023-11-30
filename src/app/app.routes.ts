@@ -15,4 +15,20 @@ export const routes: Routes = [
         (mod) => mod.LoginContainerComponent,
       ),
   },
+  {
+    path: 'chart',
+    loadComponent: () =>
+      import('./features/chart/container/chart-container.component').then(
+        (mod) => mod.ChartContainerComponent,
+      ),
+    children: [
+      ...['bubble', 'column', 'stock', 'doughnut'].map((path) => ({
+        path,
+        loadComponent: () =>
+          import('./features/chart/container/chart-container.component').then(
+            (mod) => mod.ChartContainerComponent,
+          ),
+      })),
+    ],
+  },
 ];

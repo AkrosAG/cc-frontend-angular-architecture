@@ -21,10 +21,10 @@ header {
   box-sizing: border-box;
 }
 
-.justify-between {
+.justify-end {
   flex-grow: 1;
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
 }
 
 a {

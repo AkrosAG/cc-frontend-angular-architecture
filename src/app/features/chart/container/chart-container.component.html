@@ -1,0 +1,15 @@
+<h1>Canvas JS Chart Examples</h1>
+<ul>
+  <li *ngFor="let link of this.chartService.chartLinks$ | async">
+    <a [routerLink]="[link.path]" (click)="onLinkSelect(link)">{{
+      link.label
+    }}</a>
+  </li>
+</ul>
+<app-chart
+  [columnChartData]="this.chartService.columnChartData$ | async"
+  [bubbleChartData]="this.chartService.bubbleChartData$ | async"
+  [stockChartData]="this.chartService.stockChartData$ | async"
+  [doughnutChartData]="this.chartService.doughnutChartData$ | async"
+  [activeChart]="this.chartService.activeChart$ | async"
+/>
