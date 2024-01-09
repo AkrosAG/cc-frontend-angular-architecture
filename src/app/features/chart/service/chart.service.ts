@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
-import { NavItem } from '@appfeatures/sidenav/component/api/nav-item';
-import { BehaviorSubject, Observable, of } from 'rxjs';
+import {Injectable} from '@angular/core';
+import {NavItem} from '@appfeatures/sidenav/component/api/nav-item';
+import {BehaviorSubject, Observable, of, tap} from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -23,7 +23,9 @@ export class ChartService {
     { label: 'Doughnut Chart', id: 6, path: '/chart/doughnut', isChart: true },
   ]);
   activeChartSubject$: BehaviorSubject<number> = new BehaviorSubject(0);
-  activeChart$ = this.activeChartSubject$.asObservable();
+  activeChart$ = this.activeChartSubject$.pipe(
+    tap(activeChart => console.log('activeChart', activeChart))
+  );
 
   columnChartData$: Observable<any[]> = of([
     {

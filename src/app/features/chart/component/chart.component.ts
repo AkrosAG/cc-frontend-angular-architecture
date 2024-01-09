@@ -1,12 +1,14 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { CanvasJSAngularStockChartsModule } from '@canvasjs/angular-stockcharts';
+import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {CanvasJSAngularStockChartsModule} from '@canvasjs/angular-stockcharts';
+
 @Component({
   selector: 'app-chart',
   standalone: true,
   imports: [CommonModule, CanvasJSAngularStockChartsModule],
   templateUrl: './chart.component.html',
   styleUrls: ['./chart.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ChartComponent implements OnInit {
   @Input() columnChartData: any[];

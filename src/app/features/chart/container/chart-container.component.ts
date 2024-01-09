@@ -1,10 +1,10 @@
-import { SidenavService } from '@features/sidenav/service/sidenav.service';
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ChartComponent } from '../component/chart.component';
-import { ChartService } from '../service/chart.service';
-import { RouterLink } from '@angular/router';
-import { NavItem } from '@appfeatures/sidenav/component/api/nav-item';
+import {SidenavService} from '@features/sidenav/service/sidenav.service';
+import {Component} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {ChartComponent} from '../component/chart.component';
+import {ChartService} from '../service/chart.service';
+import {RouterLink} from '@angular/router';
+import {NavItem} from '@appfeatures/sidenav/component/api/nav-item';
 
 @Component({
   selector: 'app-sidenav-container',
@@ -14,14 +14,11 @@ import { NavItem } from '@appfeatures/sidenav/component/api/nav-item';
   styleUrls: ['./chart-container.component.scss'],
 })
 export class ChartContainerComponent {
+
   constructor(
     public chartService: ChartService,
     public sidenavService: SidenavService,
-  ) {
-    chartService.activeChart$.subscribe((val) => {
-      console.log(val);
-    });
-  }
+  ) {}
 
   public onLinkSelect(navItem: NavItem) {
     this.sidenavService.activeItemSubject$.next(navItem);

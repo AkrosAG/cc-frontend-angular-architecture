@@ -1,9 +1,9 @@
-import { ChartService } from './../../chart/service/chart.service';
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { SidenavComponent } from '../component/sidenav.component';
-import { SidenavService } from '../service/sidenav.service';
-import { NavItem } from '../component/api/nav-item';
+import {ChartService} from './../../chart/service/chart.service';
+import {Component} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {SidenavComponent} from '../component/sidenav.component';
+import {SidenavService} from '../service/sidenav.service';
+import {NavItem} from '../component/api/nav-item';
 
 @Component({
   selector: 'app-sidenav-container',
@@ -27,7 +27,7 @@ export class SidenavContainerComponent {
   public onItemSelect(navItem: NavItem) {
     this.sidenavService.activeItemSubject$.next(navItem);
     if (navItem.isChart) {
-      console.log(navItem);
+      console.log(`Sidenav: selecting chart "${navItem.label}" with id ${navItem.id}`);
       this.chartService.activeChartSubject$.next(navItem.id);
     }
   }

@@ -1,6 +1,6 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { NavItem } from './api/nav-item';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {NavItem} from './api/nav-item';
 
 @Component({
   selector: 'app-sidenav',
@@ -8,6 +8,7 @@ import { NavItem } from './api/nav-item';
   imports: [CommonModule],
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SidenavComponent {
   @Input() navItems: NavItem[];
