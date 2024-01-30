@@ -18,6 +18,11 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
+## Running visual regression tests
+To run visual regression tests you need to first start the storybook with `npm run storybook`. With the URL [http://localhost:6006/](http://localhost:6006/) you can explore the different stories.
+
+As a next step you can run the Loki tests with `npm run loki:test`. If a test fails, and you want to update the reference images, you can run `npm run loki:approve` and then commit the changed images.
+
 ## Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
