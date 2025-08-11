@@ -3,21 +3,19 @@
 
 .main-wrapper {
   position: absolute;
-  top: 84px;
   width: 100%;
-  height: calc(100% - 84px);
+  height: calc(100% - 8.4rem);
   display: flex;
   flex-direction: row;
   align-items: stretch;
 }
 
 nav {
-  background: $secondary-background;
+  background: $nav-background;
   min-width: 200px;
   transition:
     min-width 0.5s,
     max-width 0.5s;
-  margin-right: 2px;
   box-shadow: 5px 0px 12px -11px #000000;
   &.hideNav {
     min-width: 0;
@@ -28,7 +26,7 @@ nav {
 main {
   background: $white;
   flex-grow: 1;
-  padding: 1rem;
+  padding: 0 1rem;
   h1 {
     margin-top: 0;
   }

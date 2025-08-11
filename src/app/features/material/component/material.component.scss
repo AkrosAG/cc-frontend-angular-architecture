@@ -1,0 +1,16 @@
+.material-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  .section {
+    display: flex;
+    flex-direction: row;
+    .sub-section {
+      flex:1;
+      .checkbox {
+        margin-right: 5px;
+      }
+    }
+  }
+}

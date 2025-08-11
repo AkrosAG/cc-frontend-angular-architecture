@@ -19,7 +19,7 @@ export class ChartComponent implements OnInit {
 
   columnChartOptions = {
     theme: 'light2',
-    animationEnabled: true,
+    animationEnabled: false,
     title: {
       text: 'Income Comparsion of 2 Products',
     },
@@ -38,7 +38,7 @@ export class ChartComponent implements OnInit {
 
   bubbleChartOptions = {
     theme: 'light2',
-    animationEnabled: true,
+    animationEnabled: false,
     title: {
       text: 'Waste Generation and Urbanization by Region',
     },
@@ -95,7 +95,7 @@ export class ChartComponent implements OnInit {
   };
 
   doughnutChartOptions = {
-    animationEnabled: true,
+    animationEnabled: false,
     title: {
       text: 'Project Cost Breakdown',
     },

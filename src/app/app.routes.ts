@@ -31,4 +31,11 @@ export const routes: Routes = [
       })),
     ],
   },
+  {
+    path: 'material',
+    loadComponent: () =>
+      import('./features/material/container/material-container.component').then(
+        (mod) => mod.MaterialContainerComponent,
+      ),
+  },
 ];

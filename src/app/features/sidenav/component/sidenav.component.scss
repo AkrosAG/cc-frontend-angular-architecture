@@ -7,18 +7,19 @@ ul {
     list-style: none;
     padding: 1em;
     margin-bottom: -1px;
-    background: #ccc;
-    border-top: 1px black solid;
-    border-bottom: 1px black solid;
+    background-color: $nav-item;
+    border-top: 1px $nav-background solid;
+    border-bottom: 1px $nav-background solid;
     cursor: pointer;
+    color: #000000;
     white-space: nowrap;
     transition: 0.6s;
     &:hover {
-      background: #a6a6a6;
+      background-color: $nav-selected-item;
     }
     &.selected {
       font-weight: bold;
-      background: $nav-selected-item;
+      background-color: $nav-selected-item;
     }
     &.sub-item {
       padding: 0.6em 2em;

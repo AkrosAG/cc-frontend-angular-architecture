@@ -15,7 +15,7 @@ export class SidenavService {
   navItems$: Observable<NavItem[]> = of([
     { label: 'Snippets', id: 1, path: '/' },
     {
-      label: 'Chart',
+      label: 'Charts',
       id: 2,
       path: '/chart',
       isChart: true,
@@ -26,6 +26,7 @@ export class SidenavService {
         { label: 'Doughnut', id: 6, path: '/chart/doughnut', isChart: true },
       ],
     },
+    { label: 'Material playground', id: 7, path: '/material' },
   ]);
   activeItemSubject$: BehaviorSubject<NavItem> = new BehaviorSubject({
     label: 'Snippets',
