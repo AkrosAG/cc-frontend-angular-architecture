@@ -11,23 +11,42 @@
     </mat-button-toggle-group>
       </div>
       <div class="sub-section">
-        <h3>Checkbox</h3>
-        <mat-checkbox class="checkbox" *ngFor="let checkbox of checkboxes; index as i" [color]="'primary'"
-                      [checked]="checkbox.value" [labelPosition]="'before'">{{checkbox.label}}</mat-checkbox>
+        <h3>Banner text</h3>
+        <mat-form-field class="w-80">
+          <mat-label>Enter banner value</mat-label>
+          <input matInput placeholder="Enter value" [(ngModel)]="bannerValue">
+        </mat-form-field>
       </div>
   </div>
   <div class="section">
     <div class="sub-section">
-    <h3>Section Title</h3>
+      <h3>Checkbox</h3>
+      <mat-checkbox class="checkbox" *ngFor="let checkbox of checkboxes; index as i" [color]="'primary'"
+                    [checked]="checkbox.value" [labelPosition]="'before'">{{checkbox.label}}</mat-checkbox>
     </div>
     <div class="sub-section">
-      <h3>Section Title</h3>
+      <h3>Banner Type</h3>
+      <mat-radio-group [(ngModel)]="selectedBannerType" aria-label="Select a banner type">
+        <mat-radio-button [color]="'primary'" [value]="BannerType.INFO" checked="true">Info</mat-radio-button>
+        <mat-radio-button [color]="'primary'" [value]="BannerType.WARNING">Warning</mat-radio-button>
+        <mat-radio-button [color]="'primary'" [value]="BannerType.ERROR">Error</mat-radio-button>
+      </mat-radio-group>
     </div>
   </div>
   <div class="section">
-
+    <div class="sub-section">
+      <h3>Textarea</h3>
+      <mat-form-field class="w-80">
+        <mat-label>Leave a comment</mat-label>
+        <textarea matInput placeholder="Enter comment..." [value]="textareaValue"></textarea>
+      </mat-form-field>
+    </div>
+    <div class="sub-section">
+      <h3>Toggle Banner</h3>
+      <mat-slide-toggle [color]="'primary'" [(ngModel)]="bannerEnabled">Show Banner</mat-slide-toggle>
+    </div>
   </div>
-  <div class="section">
-    <h3>Section Title</h3>
+  <div class="section full" *ngIf="bannerEnabled">
+    <app-banner [text]="bannerValue" [bannerType]="selectedBannerType"></app-banner>
   </div>
 </div>

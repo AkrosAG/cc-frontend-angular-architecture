@@ -16,12 +16,11 @@ import {Checkbox} from "@featuresmaterial/utils/Checkbox";
 export class MaterialContainerComponent {
 
   checkboxes: Checkbox[] = [
-    {label: "bananas", value: false},
+    {label: "info", value: false},
     {label: "apples", value: true},
     {label: "oranges", value: true},
     {label: "peaches", value: false},
   ]
 
-  startDate = new Date();
-  endDate = new Date();
+  textareaValue = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua";
 }

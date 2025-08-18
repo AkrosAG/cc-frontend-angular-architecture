@@ -8,6 +8,9 @@ import { FormsModule } from "@angular/forms";
 import { Checkbox } from "@featuresmaterial/utils/Checkbox";
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {BannerComponent} from "@featuresmaterial/component/banner/banner.component";
+import {BannerType} from "@featuresmaterial/component/banner/banner-type";
 
 @Component({
   selector: 'app-material',
@@ -20,7 +23,9 @@ import { MatInputModule } from '@angular/material/input';
     FormsModule,
     MatRadioModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatSlideToggleModule,
+    BannerComponent
   ],
   templateUrl: './material.component.html',
   styleUrls: ['./material.component.scss'],
@@ -29,5 +34,11 @@ import { MatInputModule } from '@angular/material/input';
 export class MaterialComponent {
   @Input() toggleValue: number;
   @Input() checkboxes: Checkbox[];
+  @Input() textareaValue: string;
 
+  bannerEnabled = false;
+  bannerValue: string;
+  selectedBannerType: BannerType = BannerType.INFO;
+
+  protected readonly BannerType = BannerType;
 }
