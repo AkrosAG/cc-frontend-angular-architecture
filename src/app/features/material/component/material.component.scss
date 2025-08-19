@@ -8,12 +8,9 @@
     flex-direction: row;
     .sub-section {
       flex:1;
-      .checkbox {
-        margin-right: 5px;
-      }
-      .w-80 {
-        width: 80%;
-      }
+    }
+    &.full {
+      flex-direction: column;
     }
   }
 }

@@ -2013,7 +2013,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<BannerComponent>",
-                "defaultValue": "{\r\n  title: 'UI-Library/Banner',\r\n  component: BannerComponent,\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [BannerComponent],\r\n    }),\r\n  ],\r\n  argTypes: {\r\n    bannerType: {\r\n      options: Object.values(BannerType),\r\n      control: { type: 'select' },\r\n    },\r\n  },\r\n}"
+                "defaultValue": "{\r\n  title: 'UI-Library/Banner',\r\n  component: BannerComponent,\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    bannerType: {\r\n      options: Object.values(BannerType),\r\n      control: { type: 'select' },\r\n    },\r\n  },\r\n}"
             },
             {
                 "name": "meta",
@@ -2195,7 +2195,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<BannerComponent>",
-                    "defaultValue": "{\r\n  title: 'UI-Library/Banner',\r\n  component: BannerComponent,\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [BannerComponent],\r\n    }),\r\n  ],\r\n  argTypes: {\r\n    bannerType: {\r\n      options: Object.values(BannerType),\r\n      control: { type: 'select' },\r\n    },\r\n  },\r\n}"
+                    "defaultValue": "{\r\n  title: 'UI-Library/Banner',\r\n  component: BannerComponent,\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    bannerType: {\r\n      options: Object.values(BannerType),\r\n      control: { type: 'select' },\r\n    },\r\n  },\r\n}"
                 },
                 {
                     "name": "Primary",

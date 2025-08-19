@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {BannerType} from "@featuresmaterial/component/banner/banner-type";
+import {BannerType} from "@appcomponents/banner/banner-type";
 
 @Component({
   selector: 'app-banner',

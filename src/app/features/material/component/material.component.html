@@ -1,52 +1,37 @@
 <div class="material-container">
   <div class="section">
     <div class="sub-section">
-    <h3>Button Toggle</h3>
-    <mat-button-toggle-group name="toggleGroup" aria-label="Toggle Group">
-      <mat-button-toggle [checked]="toggleValue === 1">Value 1</mat-button-toggle>
-      <mat-button-toggle [checked]="toggleValue === 2">Value 2</mat-button-toggle>
-      <mat-button-toggle [checked]="toggleValue === 3">Value 3</mat-button-toggle>
-      <mat-button-toggle [checked]="toggleValue === 4">Value 4</mat-button-toggle>
-      <mat-button-toggle [checked]="toggleValue === 5">Value 5</mat-button-toggle>
-    </mat-button-toggle-group>
+      <h3>Button Toggle</h3>
+        <app-button-toggle [toggleValue]="toggleValue"></app-button-toggle>
       </div>
       <div class="sub-section">
         <h3>Banner text</h3>
-        <mat-form-field class="w-80">
-          <mat-label>Enter banner value</mat-label>
-          <input matInput placeholder="Enter value" [(ngModel)]="bannerValue">
-        </mat-form-field>
+        <app-input (onInputChange)="bannerValue=$event"></app-input>
       </div>
   </div>
   <div class="section">
     <div class="sub-section">
       <h3>Checkbox</h3>
-      <mat-checkbox class="checkbox" *ngFor="let checkbox of checkboxes; index as i" [color]="'primary'"
-                    [checked]="checkbox.value" [labelPosition]="'before'">{{checkbox.label}}</mat-checkbox>
+      <app-checkbox [checkboxes]="checkboxes"></app-checkbox>
     </div>
     <div class="sub-section">
       <h3>Banner Type</h3>
-      <mat-radio-group [(ngModel)]="selectedBannerType" aria-label="Select a banner type">
-        <mat-radio-button [color]="'primary'" [value]="BannerType.INFO" checked="true">Info</mat-radio-button>
-        <mat-radio-button [color]="'primary'" [value]="BannerType.WARNING">Warning</mat-radio-button>
-        <mat-radio-button [color]="'primary'" [value]="BannerType.ERROR">Error</mat-radio-button>
-      </mat-radio-group>
+      <app-radio-group (onInputChange)="selectedBannerType=$event"></app-radio-group>
     </div>
   </div>
   <div class="section">
     <div class="sub-section">
       <h3>Textarea</h3>
-      <mat-form-field class="w-80">
-        <mat-label>Leave a comment</mat-label>
-        <textarea matInput placeholder="Enter comment..." [value]="textareaValue"></textarea>
-      </mat-form-field>
+      <app-textarea [textareaValue]="textareaValue"></app-textarea>
     </div>
     <div class="sub-section">
       <h3>Toggle Banner</h3>
-      <mat-slide-toggle [color]="'primary'" [(ngModel)]="bannerEnabled">Show Banner</mat-slide-toggle>
+      <app-toggle (onInputChange)="bannerEnabled=$event"></app-toggle>
     </div>
   </div>
-  <div class="section full" *ngIf="bannerEnabled">
-    <app-banner [text]="bannerValue" [bannerType]="selectedBannerType"></app-banner>
-  </div>
+  @if (bannerEnabled) {
+    <div class="section full">
+      <app-banner [text]="bannerValue" [bannerType]="selectedBannerType"></app-banner>
+    </div>
+  }
 </div>

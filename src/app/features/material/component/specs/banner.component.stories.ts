@@ -1,16 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-import { moduleMetadata } from '@storybook/angular';
-import { BannerComponent } from '@featuresmaterial/component/banner/banner.component';
-import { BannerType } from '@featuresmaterial/component/banner/banner-type';
+import { BannerComponent } from '@appcomponents/banner/banner.component';
+import { BannerType } from '@appcomponents/banner/banner-type';
 
 const meta: Meta<BannerComponent> = {
   title: 'UI-Library/Banner',
   component: BannerComponent,
-  decorators: [
-    moduleMetadata({
-      imports: [BannerComponent],
-    }),
-  ],
+  tags: ['autodocs'],
   argTypes: {
     bannerType: {
       options: Object.values(BannerType),
