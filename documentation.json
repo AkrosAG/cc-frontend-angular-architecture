@@ -597,8 +597,8 @@
         },
         {
             "name": "BannerComponent",
-            "id": "component-BannerComponent-c96cba78f88f4448339d5895e55ab39a456fa33a121037bc4525f3413c2f5676f5d3c8d59aa9747d4f743963ec41c39f3264496e6d504068be3f16039f0bb528",
-            "file": "src/app/features/material/component/banner/banner.component.ts",
+            "id": "component-BannerComponent-51d8bd88f2b8d8637c89bd406021753768816d733177aafe62079f7c36c30c6c6d560ed32fb95b336c8deb67cbaa54ee290ac66195450c05dfba60250d84cfbc",
+            "file": "src/app/components/banner/banner.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -650,17 +650,76 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {Component, Input} from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport {BannerType} from \"@featuresmaterial/component/banner/banner-type\";\n\n@Component({\n  selector: 'app-banner',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './banner.component.html',\n  styleUrls: ['./banner.component.scss']\n})\nexport class BannerComponent {\n\n  @Input()\n  text = \"\";\n\n  @Input()\n  bannerType: BannerType;\n\n}\n",
+            "sourceCode": "import {Component, Input} from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport {BannerType} from \"@appcomponents/banner/banner-type\";\n\n@Component({\n  selector: 'app-banner',\n  standalone: true,\n  imports: [CommonModule],\n  templateUrl: './banner.component.html',\n  styleUrls: ['./banner.component.scss']\n})\nexport class BannerComponent {\n\n  @Input()\n  text = \"\";\n\n  @Input()\n  bannerType: BannerType;\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".banner {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  font-size: 22px;\r\n  color: white;\r\n  height: 48px;\r\n  padding: 10px;\r\n\r\n  &.info {\r\n    background-color: #566df3;\r\n  }\r\n  &.warning {\r\n    background-color: #f1bf61;\r\n  }\r\n  &.error {\r\n    background-color: #ff2424;\r\n  }\r\n  &.success {\r\n    background-color: #6ddc0f;\r\n  }\r\n\r\n}\r\n",
+                    "data": ".banner {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  font-size: 22px;\r\n  color: white;\r\n  height: 40px;\r\n  padding: 10px;\r\n\r\n  &.info {\r\n    background-color: #566df3;\r\n  }\r\n  &.warning {\r\n    background-color: #f1bf61;\r\n  }\r\n  &.error {\r\n    background-color: #ff2424;\r\n  }\r\n  &.success {\r\n    background-color: #6ddc0f;\r\n  }\r\n\r\n}\r\n",
                     "styleUrl": "./banner.component.scss"
                 }
             ],
             "stylesData": "",
             "extends": [],
             "templateData": "  <div class=\"banner\" [ngClass]=\"bannerType\">\n      <span>{{text}}</span>\n  </div>\n"
+        },
+        {
+            "name": "ButtonToggleComponent",
+            "id": "component-ButtonToggleComponent-22495c6947a3acd21dc2b6009e43bee78bd9e21cd66d9c6572cb6c2f8ea46b0312caba7490b18989b254dc1778579e46428a96a6799060faa01aceacb1998d4a",
+            "file": "src/app/components/button-toggle/button-toggle.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-button-toggle",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./button-toggle.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "toggleValue",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "number",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MatButtonToggleGroup"
+                },
+                {
+                    "name": "MatButtonToggleModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {CommonModule} from \"@angular/common\";\r\nimport {MatButtonToggleGroup, MatButtonToggleModule} from \"@angular/material/button-toggle\";\r\n\r\n@Component({\r\n  selector: 'app-button-toggle',\r\n  standalone: true,\r\n  imports: [CommonModule, MatButtonToggleGroup, MatButtonToggleModule],\r\n  templateUrl: './button-toggle.component.html',\r\n  styleUrl: './button-toggle.component.scss'\r\n})\r\nexport class ButtonToggleComponent {\r\n  @Input() toggleValue: number;\r\n}\r\n",
+            "styleUrl": "./button-toggle.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<mat-button-toggle-group name=\"toggleGroup\" aria-label=\"Toggle Group\">\r\n  <mat-button-toggle [checked]=\"toggleValue === 1\">Value 1</mat-button-toggle>\r\n  <mat-button-toggle [checked]=\"toggleValue === 2\">Value 2</mat-button-toggle>\r\n  <mat-button-toggle [checked]=\"toggleValue === 3\">Value 3</mat-button-toggle>\r\n  <mat-button-toggle [checked]=\"toggleValue === 4\">Value 4</mat-button-toggle>\r\n  <mat-button-toggle [checked]=\"toggleValue === 5\">Value 5</mat-button-toggle>\r\n</mat-button-toggle-group>\r\n"
         },
         {
             "name": "ChartComponent",
@@ -985,6 +1044,61 @@
             "templateData": "<div class=\"chart-links-container\">\r\n  <h3>Canvas JS Chart Examples</h3>\r\n\r\n  <div *ngFor=\"let link of this.chartService.chartLinks$ | async\" class=\"chart-link\">\r\n    <button mat-flat-button color=\"primary\"><a [routerLink]=\"[link.path]\" (click)=\"onLinkSelect(link)\">{{\r\n        link.label\r\n      }}</a></button>\r\n  </div>\r\n</div>\r\n\r\n<app-chart\r\n  [columnChartData]=\"this.chartService.columnChartData$ | async\"\r\n  [bubbleChartData]=\"this.chartService.bubbleChartData$ | async\"\r\n  [stockChartData]=\"this.chartService.stockChartData$ | async\"\r\n  [doughnutChartData]=\"this.chartService.doughnutChartData$ | async\"\r\n  [activeChart]=\"this.chartService.activeChart$ | async\"\r\n/>\r\n"
         },
         {
+            "name": "CheckboxComponent",
+            "id": "component-CheckboxComponent-433be19b7b7b6d80af24c6f4ed4dad2864f0dab216c5534923a53249d704db26b4d6e0d34ebf126828edf71f9f5be4bc85ca879593beac560b3f263d156dde89",
+            "file": "src/app/components/checkbox/checkbox.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-checkbox",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./checkbox.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "checkboxes",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "Checkbox[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MatCheckbox"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {CommonModule} from \"@angular/common\";\r\nimport {MatCheckbox} from \"@angular/material/checkbox\";\r\nimport {Checkbox} from \"@featuresmaterial/utils/Checkbox\";\r\n\r\n@Component({\r\n  selector: 'app-checkbox',\r\n  imports: [CommonModule, MatCheckbox],\r\n  standalone: true,\r\n  templateUrl: './checkbox.component.html',\r\n  styleUrl: './checkbox.component.scss'\r\n})\r\nexport class CheckboxComponent {\r\n\r\n  @Input() checkboxes: Checkbox[];\r\n}\r\n",
+            "styleUrl": "./checkbox.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<mat-checkbox class=\"checkbox\" *ngFor=\"let checkbox of checkboxes; index as i\" [color]=\"'primary'\"\r\n              [checked]=\"checkbox.value\" [labelPosition]=\"'before'\">{{checkbox.label}}</mat-checkbox>\r\n"
+        },
+        {
             "name": "FooterComponent",
             "id": "component-FooterComponent-5e3fb0ecf3eaae4585969401fa3c752effd45d053d26200a4299313040b9c5f70e33b2de5c7b2fd67e6e09bb980b78e75cffb05ffbdbbc3c98bdd78fb7f10250",
             "file": "src/app/features/footer/component/footer.component.ts",
@@ -1300,6 +1414,111 @@
             "extends": []
         },
         {
+            "name": "InputComponent",
+            "id": "component-InputComponent-24c5f84981a8603bcd1dfa08c3ffb991eef55579b62c55c2f946cf6134f250070e8f2da14c975d2c731b92ea3d9183700b611d8869467d61e5f85840b032e450",
+            "file": "src/app/components/input/input.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-input",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./input.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [
+                {
+                    "name": "onInputChange",
+                    "defaultValue": "new EventEmitter<string>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "bannerValue",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "inputChange",
+                    "args": [
+                        {
+                            "name": "val",
+                            "type": "",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 19,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "val",
+                            "type": "",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MatFormField"
+                },
+                {
+                    "name": "MatLabel"
+                },
+                {
+                    "name": "FormsModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MatInput"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {Component, EventEmitter, Input, Output} from '@angular/core';\r\nimport {CommonModule} from \"@angular/common\";\r\nimport {FormsModule} from \"@angular/forms\";\r\nimport {MatFormField, MatInput, MatLabel} from \"@angular/material/input\";\r\n\r\n@Component({\r\n  selector: 'app-input',\r\n  standalone: true,\r\n  imports: [CommonModule, MatFormField, MatLabel, FormsModule, MatInput],\r\n  templateUrl: './input.component.html',\r\n  styleUrl: './input.component.scss'\r\n})\r\nexport class InputComponent {\r\n\r\n  bannerValue: string;\r\n\r\n  @Output() onInputChange = new EventEmitter<string>();\r\n\r\n  inputChange(val) {\r\n    this.onInputChange.emit(val)\r\n  }\r\n\r\n\r\n}\r\n",
+            "styleUrl": "./input.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<mat-form-field class=\"w-80\">\r\n  <mat-label>Enter banner value</mat-label>\r\n  <input matInput placeholder=\"Enter value\" [(ngModel)]=\"bannerValue\" (ngModelChange)=\"inputChange($event)\">\r\n</mat-form-field>\r\n"
+        },
+        {
             "name": "LoginContainerComponent",
             "id": "component-LoginContainerComponent-0172698455bd2c2ee10213c04db4d5414b5be0ae1d6e8fe731b5f7a108cc3243cd393fe6a58dfc27cce1ac0971eb43dc49d55976287428393b05b8538194210e",
             "file": "src/app/features/login/container/login-container.component.ts",
@@ -1395,7 +1614,7 @@
         },
         {
             "name": "MaterialComponent",
-            "id": "component-MaterialComponent-0d19efd4e7cbece793e4d2d63cfbf9a328dca509c6426682a273bbdfe8c86c42b3d5b0297fa684914db00dddcec3071676a5753da8cc4902e44085d7b65ed95c",
+            "id": "component-MaterialComponent-f8f09f35b2258823cc9d8b951d999de6db22a4e58654715191389d29eb9ed8de070ad749019c31143f0e010654ce152e91621050442ce22737fabfa05a7c310c",
             "file": "src/app/features/material/component/material.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -1418,7 +1637,7 @@
                     "name": "checkboxes",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 36,
+                    "line": 46,
                     "type": "Checkbox[]",
                     "decorators": []
                 },
@@ -1426,7 +1645,7 @@
                     "name": "textareaValue",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 37,
+                    "line": 47,
                     "type": "string",
                     "decorators": []
                 },
@@ -1434,7 +1653,7 @@
                     "name": "toggleValue",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 35,
+                    "line": 45,
                     "type": "number",
                     "decorators": []
                 }
@@ -1450,7 +1669,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 39
+                    "line": 49
                 },
                 {
                     "name": "BannerType",
@@ -1461,7 +1680,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 43,
+                    "line": 53,
                     "modifierKind": [
                         124,
                         148
@@ -1475,7 +1694,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 40
+                    "line": 50
                 },
                 {
                     "name": "selectedBannerType",
@@ -1486,7 +1705,7 @@
                     "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 41
+                    "line": 51
                 }
             ],
             "methodsClass": [],
@@ -1498,10 +1717,6 @@
             "imports": [
                 {
                     "name": "CommonModule",
-                    "type": "module"
-                },
-                {
-                    "name": "MatButtonToggleModule",
                     "type": "module"
                 },
                 {
@@ -1535,22 +1750,46 @@
                 {
                     "name": "BannerComponent",
                     "type": "component"
+                },
+                {
+                    "name": "ButtonToggleComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "CheckboxComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "InputComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "RadioGroupComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "TextareaComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "ToggleComponent",
+                    "type": "component"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { MatButtonToggleModule } from \"@angular/material/button-toggle\";\r\nimport { MatRadioModule } from \"@angular/material/radio\";\r\nimport { MatCardModule } from \"@angular/material/card\";\r\nimport { MatCheckboxModule } from \"@angular/material/checkbox\";\r\nimport { FormsModule } from \"@angular/forms\";\r\nimport { Checkbox } from \"@featuresmaterial/utils/Checkbox\";\r\nimport { MatFormFieldModule } from '@angular/material/form-field';\r\nimport { MatInputModule } from '@angular/material/input';\r\nimport {MatSlideToggleModule} from '@angular/material/slide-toggle';\r\nimport {BannerComponent} from \"@featuresmaterial/component/banner/banner.component\";\r\nimport {BannerType} from \"@featuresmaterial/component/banner/banner-type\";\r\n\r\n@Component({\r\n  selector: 'app-material',\r\n  standalone: true,\r\n  imports: [\r\n    CommonModule,\r\n    MatButtonToggleModule,\r\n    MatCardModule,\r\n    MatCheckboxModule,\r\n    FormsModule,\r\n    MatRadioModule,\r\n    MatFormFieldModule,\r\n    MatInputModule,\r\n    MatSlideToggleModule,\r\n    BannerComponent\r\n  ],\r\n  templateUrl: './material.component.html',\r\n  styleUrls: ['./material.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n})\r\nexport class MaterialComponent {\r\n  @Input() toggleValue: number;\r\n  @Input() checkboxes: Checkbox[];\r\n  @Input() textareaValue: string;\r\n\r\n  bannerEnabled = false;\r\n  bannerValue: string;\r\n  selectedBannerType: BannerType = BannerType.INFO;\r\n\r\n  protected readonly BannerType = BannerType;\r\n}\r\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { MatRadioModule } from \"@angular/material/radio\";\r\nimport { MatCardModule } from \"@angular/material/card\";\r\nimport { MatCheckboxModule } from \"@angular/material/checkbox\";\r\nimport { FormsModule } from \"@angular/forms\";\r\nimport { Checkbox } from \"@featuresmaterial/utils/Checkbox\";\r\nimport { MatFormFieldModule } from '@angular/material/form-field';\r\nimport { MatInputModule } from '@angular/material/input';\r\nimport {MatSlideToggleModule} from '@angular/material/slide-toggle';\r\nimport {BannerComponent} from \"@appcomponents/banner/banner.component\";\r\nimport {BannerType} from \"@appcomponents/banner/banner-type\";\r\nimport {ButtonToggleComponent} from \"@appcomponents/button-toggle/button-toggle.component\";\r\nimport { CheckboxComponent } from '@appcomponents/checkbox/checkbox.component';\r\nimport {InputComponent} from \"@appcomponents/input/input.component\";\r\nimport {RadioGroupComponent} from \"@appcomponents/radio-group/radio-group.component\";\r\nimport {TextareaComponent} from \"@appcomponents/textarea/textarea.component\";\r\nimport {ToggleComponent} from \"@appcomponents/toggle/toggle.component\";\r\n\r\n@Component({\r\n  selector: 'app-material',\r\n  standalone: true,\r\n  imports: [\r\n    CommonModule,\r\n    MatCardModule,\r\n    MatCheckboxModule,\r\n    FormsModule,\r\n    MatRadioModule,\r\n    MatFormFieldModule,\r\n    MatInputModule,\r\n    MatSlideToggleModule,\r\n    BannerComponent,\r\n    ButtonToggleComponent,\r\n    CheckboxComponent,\r\n    InputComponent,\r\n    RadioGroupComponent,\r\n    TextareaComponent,\r\n    ToggleComponent\r\n  ],\r\n  templateUrl: './material.component.html',\r\n  styleUrls: ['./material.component.scss'],\r\n  changeDetection: ChangeDetectionStrategy.OnPush,\r\n})\r\nexport class MaterialComponent {\r\n  @Input() toggleValue: number;\r\n  @Input() checkboxes: Checkbox[];\r\n  @Input() textareaValue: string;\r\n\r\n  bannerEnabled = false;\r\n  bannerValue: string;\r\n  selectedBannerType: BannerType = BannerType.INFO;\r\n\r\n  protected readonly BannerType = BannerType;\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".material-container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 1.5rem;\r\n  margin-top: 1rem;\r\n  .section {\r\n    display: flex;\r\n    flex-direction: row;\r\n    .sub-section {\r\n      flex:1;\r\n      .checkbox {\r\n        margin-right: 5px;\r\n      }\r\n      .w-80 {\r\n        width: 80%;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
+                    "data": ".material-container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 1.5rem;\r\n  margin-top: 1rem;\r\n  .section {\r\n    display: flex;\r\n    flex-direction: row;\r\n    .sub-section {\r\n      flex:1;\r\n    }\r\n    &.full {\r\n      flex-direction: column;\r\n    }\r\n  }\r\n}\r\n",
                     "styleUrl": "./material.component.scss"
                 }
             ],
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"material-container\">\r\n  <div class=\"section\">\r\n    <div class=\"sub-section\">\r\n    <h3>Button Toggle</h3>\r\n    <mat-button-toggle-group name=\"toggleGroup\" aria-label=\"Toggle Group\">\r\n      <mat-button-toggle [checked]=\"toggleValue === 1\">Value 1</mat-button-toggle>\r\n      <mat-button-toggle [checked]=\"toggleValue === 2\">Value 2</mat-button-toggle>\r\n      <mat-button-toggle [checked]=\"toggleValue === 3\">Value 3</mat-button-toggle>\r\n      <mat-button-toggle [checked]=\"toggleValue === 4\">Value 4</mat-button-toggle>\r\n      <mat-button-toggle [checked]=\"toggleValue === 5\">Value 5</mat-button-toggle>\r\n    </mat-button-toggle-group>\r\n      </div>\r\n      <div class=\"sub-section\">\r\n        <h3>Banner text</h3>\r\n        <mat-form-field class=\"w-80\">\r\n          <mat-label>Enter banner value</mat-label>\r\n          <input matInput placeholder=\"Enter value\" [(ngModel)]=\"bannerValue\">\r\n        </mat-form-field>\r\n      </div>\r\n  </div>\r\n  <div class=\"section\">\r\n    <div class=\"sub-section\">\r\n      <h3>Checkbox</h3>\r\n      <mat-checkbox class=\"checkbox\" *ngFor=\"let checkbox of checkboxes; index as i\" [color]=\"'primary'\"\r\n                    [checked]=\"checkbox.value\" [labelPosition]=\"'before'\">{{checkbox.label}}</mat-checkbox>\r\n    </div>\r\n    <div class=\"sub-section\">\r\n      <h3>Banner Type</h3>\r\n      <mat-radio-group [(ngModel)]=\"selectedBannerType\" aria-label=\"Select a banner type\">\r\n        <mat-radio-button [color]=\"'primary'\" [value]=\"BannerType.INFO\" checked=\"true\">Info</mat-radio-button>\r\n        <mat-radio-button [color]=\"'primary'\" [value]=\"BannerType.WARNING\">Warning</mat-radio-button>\r\n        <mat-radio-button [color]=\"'primary'\" [value]=\"BannerType.ERROR\">Error</mat-radio-button>\r\n      </mat-radio-group>\r\n    </div>\r\n  </div>\r\n  <div class=\"section\">\r\n    <div class=\"sub-section\">\r\n      <h3>Textarea</h3>\r\n      <mat-form-field class=\"w-80\">\r\n        <mat-label>Leave a comment</mat-label>\r\n        <textarea matInput placeholder=\"Enter comment...\" [value]=\"textareaValue\"></textarea>\r\n      </mat-form-field>\r\n    </div>\r\n    <div class=\"sub-section\">\r\n      <h3>Toggle Banner</h3>\r\n      <mat-slide-toggle [color]=\"'primary'\" [(ngModel)]=\"bannerEnabled\">Show Banner</mat-slide-toggle>\r\n    </div>\r\n  </div>\r\n  <div class=\"section full\" *ngIf=\"bannerEnabled\">\r\n    <app-banner [text]=\"bannerValue\" [bannerType]=\"selectedBannerType\"></app-banner>\r\n  </div>\r\n</div>\r\n"
+            "templateData": "<div class=\"material-container\">\r\n  <div class=\"section\">\r\n    <div class=\"sub-section\">\r\n      <h3>Button Toggle</h3>\r\n        <app-button-toggle [toggleValue]=\"toggleValue\"></app-button-toggle>\r\n      </div>\r\n      <div class=\"sub-section\">\r\n        <h3>Banner text</h3>\r\n        <app-input (onInputChange)=\"bannerValue=$event\"></app-input>\r\n      </div>\r\n  </div>\r\n  <div class=\"section\">\r\n    <div class=\"sub-section\">\r\n      <h3>Checkbox</h3>\r\n      <app-checkbox [checkboxes]=\"checkboxes\"></app-checkbox>\r\n    </div>\r\n    <div class=\"sub-section\">\r\n      <h3>Banner Type</h3>\r\n      <app-radio-group (onInputChange)=\"selectedBannerType=$event\"></app-radio-group>\r\n    </div>\r\n  </div>\r\n  <div class=\"section\">\r\n    <div class=\"sub-section\">\r\n      <h3>Textarea</h3>\r\n      <app-textarea [textareaValue]=\"textareaValue\"></app-textarea>\r\n    </div>\r\n    <div class=\"sub-section\">\r\n      <h3>Toggle Banner</h3>\r\n      <app-toggle (onInputChange)=\"bannerEnabled=$event\"></app-toggle>\r\n    </div>\r\n  </div>\r\n  @if (bannerEnabled) {\r\n    <div class=\"section full\">\r\n      <app-banner [text]=\"bannerValue\" [bannerType]=\"selectedBannerType\"></app-banner>\r\n    </div>\r\n  }\r\n</div>\r\n"
         },
         {
             "name": "MaterialContainerComponent",
@@ -1639,6 +1878,124 @@
             "stylesData": "",
             "extends": [],
             "templateData": "<app-material [toggleValue]=\"3\" [checkboxes]=\"checkboxes\" [textareaValue]=\"textareaValue\"/>\r\n"
+        },
+        {
+            "name": "RadioGroupComponent",
+            "id": "component-RadioGroupComponent-b81b82d7588c4ea5cf8ab1fbdcfd3f8e0d8eaf0e6b364b2e24a629a2cf3a49440b67e28264b04f02deb16559ff3a1e531bf7031c1fed4b9e61327150f6f67c06",
+            "file": "src/app/components/radio-group/radio-group.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-radio-group",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./radio-group.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [
+                {
+                    "name": "onInputChange",
+                    "defaultValue": "new EventEmitter<BannerType>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "BannerType",
+                    "defaultValue": "BannerType",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 25,
+                    "modifierKind": [
+                        124,
+                        148
+                    ]
+                },
+                {
+                    "name": "selectedBannerType",
+                    "defaultValue": "BannerType.INFO",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "BannerType",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "inputChange",
+                    "args": [
+                        {
+                            "name": "val",
+                            "type": "",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 20,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "val",
+                            "type": "",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MatRadioButton"
+                },
+                {
+                    "name": "MatRadioGroup"
+                },
+                {
+                    "name": "FormsModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {Component, EventEmitter, Output} from '@angular/core';\r\nimport {CommonModule} from \"@angular/common\";\r\nimport {MatRadioButton, MatRadioGroup} from \"@angular/material/radio\";\r\nimport {BannerType} from \"@appcomponents/banner/banner-type\";\r\nimport {FormsModule} from \"@angular/forms\";\r\n\r\n@Component({\r\n  selector: 'app-radio-group',\r\n  standalone: true,\r\n  imports: [CommonModule, MatRadioButton, MatRadioGroup, FormsModule],\r\n  templateUrl: './radio-group.component.html',\r\n  styleUrl: './radio-group.component.scss'\r\n})\r\nexport class RadioGroupComponent {\r\n\r\n  selectedBannerType: BannerType = BannerType.INFO;\r\n\r\n  @Output() onInputChange = new EventEmitter<BannerType>();\r\n\r\n  inputChange(val) {\r\n    console.log(val)\r\n    this.onInputChange.emit(val)\r\n  }\r\n\r\n  protected readonly BannerType = BannerType;\r\n}\r\n",
+            "styleUrl": "./radio-group.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<mat-radio-group [(ngModel)]=\"selectedBannerType\" aria-label=\"Select a banner type\" (ngModelChange)=\"inputChange($event)\">\r\n  <mat-radio-button [color]=\"'primary'\" [value]=\"BannerType.INFO\" checked=\"true\">Info</mat-radio-button>\r\n  <mat-radio-button [color]=\"'primary'\" [value]=\"BannerType.WARNING\">Warning</mat-radio-button>\r\n  <mat-radio-button [color]=\"'primary'\" [value]=\"BannerType.ERROR\">Error</mat-radio-button>\r\n  <mat-radio-button [color]=\"'primary'\" [value]=\"BannerType.SUCCESS\">Success</mat-radio-button>\r\n</mat-radio-group>\r\n"
         },
         {
             "name": "SidenavComponent",
@@ -1950,6 +2307,166 @@
             "stylesData": "",
             "extends": [],
             "templateData": "<div class=\"snippet-container\" *ngIf=\"snippet\">\r\n  <h5>{{ snippet.title }}</h5>\r\n  <div class=\"snippet-content\">\r\n    {{ snippet.content }}\r\n  </div>\r\n</div>\r\n"
+        },
+        {
+            "name": "TextareaComponent",
+            "id": "component-TextareaComponent-be15a9654e055dd136ca6e565a85bdf2cc4f1b86954ca581f697acfde4e4d09641d1f2c14b6dbe226f731aa630b0a2ec4ed3311997ecd17a9bdb7b91c4414f5a",
+            "file": "src/app/components/textarea/textarea.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-textarea",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./textarea.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "textareaValue",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MatLabel"
+                },
+                {
+                    "name": "MatFormField"
+                },
+                {
+                    "name": "MatInput"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {Component, Input} from '@angular/core';\r\nimport {CommonModule} from \"@angular/common\";\r\nimport {MatFormField, MatInput, MatLabel} from \"@angular/material/input\";\r\n\r\n@Component({\r\n  selector: 'app-textarea',\r\n  standalone: true,\r\n  imports: [CommonModule, MatLabel, MatFormField, MatInput],\r\n  templateUrl: './textarea.component.html',\r\n  styleUrl: './textarea.component.scss'\r\n})\r\nexport class TextareaComponent {\r\n\r\n  @Input() textareaValue: string;\r\n}\r\n",
+            "styleUrl": "./textarea.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<mat-form-field class=\"w-80\">\r\n  <mat-label>Leave a comment</mat-label>\r\n  <textarea matInput placeholder=\"Enter comment...\" [value]=\"textareaValue\"></textarea>\r\n</mat-form-field>\r\n"
+        },
+        {
+            "name": "ToggleComponent",
+            "id": "component-ToggleComponent-0357fb702460675b27a0896b554fcb850b5a994c0c69d305c2795c6ba3606a38c4ede0ecbf59613b1bed0e2f669904f946dc69f10ff2ea58b45d777f34b72bbd",
+            "file": "src/app/components/toggle/toggle.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-toggle",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./toggle.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [
+                {
+                    "name": "onInputChange",
+                    "defaultValue": "new EventEmitter<boolean>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "bannerEnabled",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "inputChange",
+                    "args": [
+                        {
+                            "name": "val",
+                            "type": "",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 18,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "val",
+                            "type": "",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "MatSlideToggle"
+                },
+                {
+                    "name": "FormsModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {Component, EventEmitter, Output} from '@angular/core';\r\nimport {CommonModule} from \"@angular/common\";\r\nimport {MatSlideToggle} from \"@angular/material/slide-toggle\";\r\nimport {FormsModule} from \"@angular/forms\";\r\n\r\n@Component({\r\n  selector: 'app-toggle',\r\n  standalone: true,\r\n  imports: [CommonModule, MatSlideToggle, FormsModule],\r\n  templateUrl: './toggle.component.html',\r\n  styleUrl: './toggle.component.scss'\r\n})\r\nexport class ToggleComponent {\r\n  bannerEnabled: boolean;\r\n\r\n  @Output() onInputChange = new EventEmitter<boolean>();\r\n\r\n  inputChange(val) {\r\n    this.onInputChange.emit(val)\r\n  }\r\n\r\n}\r\n",
+            "styleUrl": "./toggle.component.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<mat-slide-toggle [color]=\"'primary'\" [(ngModel)]=\"bannerEnabled\" (ngModelChange)=\"inputChange($event)\">Show Banner</mat-slide-toggle>\r\n"
         }
     ],
     "modules": [],
@@ -1999,21 +2516,81 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/features/home/component/specs/home.component.stories.ts",
+                "file": "src/app/components/banner/banner.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<HomeComponent>",
-                "defaultValue": "{\r\n  title: 'ccAngularArchitecture/Home',\r\n  component: HomeComponent,\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [HomeComponent],\r\n    }),\r\n  ],\r\n}"
+                "type": "Meta<BannerComponent>",
+                "defaultValue": "{\r\n  title: 'UI-Library/Banner',\r\n  component: BannerComponent,\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    bannerType: {\r\n      options: Object.values(BannerType),\r\n      control: { type: 'select' },\r\n    },\r\n  },\r\n}"
             },
             {
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/features/material/component/specs/banner.component.stories.ts",
+                "file": "src/app/components/button-toggle/button-toggle.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<BannerComponent>",
-                "defaultValue": "{\r\n  title: 'UI-Library/Banner',\r\n  component: BannerComponent,\r\n  tags: ['autodocs'],\r\n  argTypes: {\r\n    bannerType: {\r\n      options: Object.values(BannerType),\r\n      control: { type: 'select' },\r\n    },\r\n  },\r\n}"
+                "type": "Meta<ButtonToggleComponent>",
+                "defaultValue": "{\r\n  title: 'UI-Library/ButtonToggle',\r\n  component: ButtonToggleComponent,\r\n  tags: ['autodocs'],\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: `\r\n        **ButtonToggle** is a special UI element created with angular material.\r\n\r\n        - Sample for angular material showcase\r\n        - Sample for Storybook, Loki and documentation\r\n      `,\r\n      },\r\n    }\r\n  },\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/checkbox/checkbox.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<CheckboxComponent>",
+                "defaultValue": "{\r\n  title: 'UI-Library/Checkbox',\r\n  component: CheckboxComponent,\r\n  tags: ['autodocs'],\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: `\r\n        **Checkbox** is a special UI element created with angular material.\r\n\r\n        - Sample for angular material showcase\r\n        - Sample for Storybook, Loki and documentation\r\n      `,\r\n      },\r\n    },\r\n  }\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/input/input.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<InputComponent>",
+                "defaultValue": "{\r\n  title: 'UI-Library/Input',\r\n  component: InputComponent,\r\n  tags: ['autodocs'],\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: `\r\n        **Input** is a special UI element created with angular material.\r\n\r\n        - Sample for angular material showcase\r\n        - Sample for Storybook, Loki and documentation\r\n      `,\r\n      },\r\n    }\r\n  },\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/radio-group/radio-group.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<RadioGroupComponent>",
+                "defaultValue": "{\r\n  title: 'UI-Library/RadioGroup',\r\n  component: RadioGroupComponent,\r\n  tags: ['autodocs'],\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: `\r\n        **RadioGroup** is a special UI element created with angular material.\r\n\r\n        - Sample for angular material showcase\r\n        - Sample for Storybook, Loki and documentation\r\n      `,\r\n      },\r\n    }\r\n  },\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/textarea/textarea.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<TextareaComponent>",
+                "defaultValue": "{\r\n  title: 'UI-Library/Textarea',\r\n  component: TextareaComponent,\r\n  tags: ['autodocs'],\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: `\r\n        **Textarea** is a special UI element created with angular material.\r\n\r\n        - Sample for angular material showcase\r\n        - Sample for Storybook, Loki and documentation\r\n      `,\r\n      },\r\n    }\r\n  },\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/toggle/toggle.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<ToggleComponent>",
+                "defaultValue": "{\r\n  title: 'UI-Library/Toggle',\r\n  component: ToggleComponent,\r\n  tags: ['autodocs'],\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: `\r\n        **Toggle** is a special UI element created with angular material.\r\n\r\n        - Sample for angular material showcase\r\n        - Sample for Storybook, Loki and documentation\r\n      `,\r\n      },\r\n    }\r\n  },\r\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/features/home/component/specs/home.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<HomeComponent>",
+                "defaultValue": "{\r\n  title: 'ccAngularArchitecture/Home',\r\n  component: HomeComponent,\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [HomeComponent],\r\n    }),\r\n  ],\r\n}"
             },
             {
                 "name": "meta",
@@ -2039,11 +2616,71 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/features/material/component/specs/banner.component.stories.ts",
+                "file": "src/app/components/banner/banner.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\r\n  args: {\r\n    text: 'Sample Banner text for Storybook',\r\n    bannerType: BannerType.INFO,\r\n  },\r\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/button-toggle/button-toggle.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    toggleValue: 5,\r\n  },\r\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/checkbox/checkbox.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    checkboxes: [{\"label\":\"info\",\"value\":false},{\"label\":\"apples\",\"value\":true},{\"label\":\"oranges\",\"value\":true},{\"label\":\"peaches\",\"value\":false}],\r\n  },\r\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/input/input.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    bannerValue: \"Story input\",\r\n  },\r\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/textarea/textarea.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    textareaValue: \"Story textarea input\",\r\n  },\r\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/toggle/toggle.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    bannerEnabled: true,\r\n  },\r\n}"
+            },
+            {
+                "name": "Success",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/radio-group/radio-group.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n  args: {\r\n    selectedBannerType: BannerType.SUCCESS,\r\n  },\r\n}"
             }
         ],
         "functions": [],
@@ -2052,8 +2689,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<HomeComponent>",
-                "file": "src/app/features/home/component/specs/home.component.stories.ts",
+                "rawtype": "StoryObj<BannerComponent>",
+                "file": "src/app/components/banner/banner.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -2063,8 +2700,74 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<BannerComponent>",
-                "file": "src/app/features/material/component/specs/banner.component.stories.ts",
+                "rawtype": "StoryObj<ButtonToggleComponent>",
+                "file": "src/app/components/button-toggle/button-toggle.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<CheckboxComponent>",
+                "file": "src/app/components/checkbox/checkbox.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<InputComponent>",
+                "file": "src/app/components/input/input.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<RadioGroupComponent>",
+                "file": "src/app/components/radio-group/radio-group.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<TextareaComponent>",
+                "file": "src/app/components/textarea/textarea.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<ToggleComponent>",
+                "file": "src/app/components/toggle/toggle.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<HomeComponent>",
+                "file": "src/app/features/home/component/specs/home.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -2116,7 +2819,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
-                "file": "src/app/features/material/component/banner/banner-type.ts"
+                "file": "src/app/components/banner/banner-type.ts"
             }
         ],
         "groupedVariables": {
@@ -2186,12 +2889,12 @@
                     "defaultValue": "{\r\n  title: 'ccAngularArchitecture/Snippets',\r\n  component: SnippetComponent,\r\n  decorators: [\r\n    moduleMetadata({\r\n      imports: [SnippetComponent],\r\n    }),\r\n  ],\r\n}"
                 }
             ],
-            "src/app/features/material/component/specs/banner.component.stories.ts": [
+            "src/app/components/banner/banner.component.stories.ts": [
                 {
                     "name": "meta",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/features/material/component/specs/banner.component.stories.ts",
+                    "file": "src/app/components/banner/banner.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<BannerComponent>",
@@ -2201,11 +2904,143 @@
                     "name": "Primary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/features/material/component/specs/banner.component.stories.ts",
+                    "file": "src/app/components/banner/banner.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\r\n  args: {\r\n    text: 'Sample Banner text for Storybook',\r\n    bannerType: BannerType.INFO,\r\n  },\r\n}"
+                }
+            ],
+            "src/app/components/button-toggle/button-toggle.component.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/button-toggle/button-toggle.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<ButtonToggleComponent>",
+                    "defaultValue": "{\r\n  title: 'UI-Library/ButtonToggle',\r\n  component: ButtonToggleComponent,\r\n  tags: ['autodocs'],\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: `\r\n        **ButtonToggle** is a special UI element created with angular material.\r\n\r\n        - Sample for angular material showcase\r\n        - Sample for Storybook, Loki and documentation\r\n      `,\r\n      },\r\n    }\r\n  },\r\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/button-toggle/button-toggle.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    toggleValue: 5,\r\n  },\r\n}"
+                }
+            ],
+            "src/app/components/checkbox/checkbox.component.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/checkbox/checkbox.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<CheckboxComponent>",
+                    "defaultValue": "{\r\n  title: 'UI-Library/Checkbox',\r\n  component: CheckboxComponent,\r\n  tags: ['autodocs'],\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: `\r\n        **Checkbox** is a special UI element created with angular material.\r\n\r\n        - Sample for angular material showcase\r\n        - Sample for Storybook, Loki and documentation\r\n      `,\r\n      },\r\n    },\r\n  }\r\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/checkbox/checkbox.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    checkboxes: [{\"label\":\"info\",\"value\":false},{\"label\":\"apples\",\"value\":true},{\"label\":\"oranges\",\"value\":true},{\"label\":\"peaches\",\"value\":false}],\r\n  },\r\n}"
+                }
+            ],
+            "src/app/components/input/input.component.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/input/input.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<InputComponent>",
+                    "defaultValue": "{\r\n  title: 'UI-Library/Input',\r\n  component: InputComponent,\r\n  tags: ['autodocs'],\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: `\r\n        **Input** is a special UI element created with angular material.\r\n\r\n        - Sample for angular material showcase\r\n        - Sample for Storybook, Loki and documentation\r\n      `,\r\n      },\r\n    }\r\n  },\r\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/input/input.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    bannerValue: \"Story input\",\r\n  },\r\n}"
+                }
+            ],
+            "src/app/components/radio-group/radio-group.component.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/radio-group/radio-group.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<RadioGroupComponent>",
+                    "defaultValue": "{\r\n  title: 'UI-Library/RadioGroup',\r\n  component: RadioGroupComponent,\r\n  tags: ['autodocs'],\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: `\r\n        **RadioGroup** is a special UI element created with angular material.\r\n\r\n        - Sample for angular material showcase\r\n        - Sample for Storybook, Loki and documentation\r\n      `,\r\n      },\r\n    }\r\n  },\r\n}"
+                },
+                {
+                    "name": "Success",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/radio-group/radio-group.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    selectedBannerType: BannerType.SUCCESS,\r\n  },\r\n}"
+                }
+            ],
+            "src/app/components/textarea/textarea.component.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/textarea/textarea.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<TextareaComponent>",
+                    "defaultValue": "{\r\n  title: 'UI-Library/Textarea',\r\n  component: TextareaComponent,\r\n  tags: ['autodocs'],\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: `\r\n        **Textarea** is a special UI element created with angular material.\r\n\r\n        - Sample for angular material showcase\r\n        - Sample for Storybook, Loki and documentation\r\n      `,\r\n      },\r\n    }\r\n  },\r\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/textarea/textarea.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    textareaValue: \"Story textarea input\",\r\n  },\r\n}"
+                }
+            ],
+            "src/app/components/toggle/toggle.component.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/toggle/toggle.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<ToggleComponent>",
+                    "defaultValue": "{\r\n  title: 'UI-Library/Toggle',\r\n  component: ToggleComponent,\r\n  tags: ['autodocs'],\r\n  parameters: {\r\n    docs: {\r\n      description: {\r\n        component: `\r\n        **Toggle** is a special UI element created with angular material.\r\n\r\n        - Sample for angular material showcase\r\n        - Sample for Storybook, Loki and documentation\r\n      `,\r\n      },\r\n    }\r\n  },\r\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/toggle/toggle.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n  args: {\r\n    bannerEnabled: true,\r\n  },\r\n}"
                 }
             ],
             ".storybook/preview.ts": [
@@ -2223,7 +3058,7 @@
         },
         "groupedFunctions": {},
         "groupedEnumerations": {
-            "src/app/features/material/component/banner/banner-type.ts": [
+            "src/app/components/banner/banner-type.ts": [
                 {
                     "name": "BannerType",
                     "childs": [
@@ -2257,11 +3092,102 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
-                    "file": "src/app/features/material/component/banner/banner-type.ts"
+                    "file": "src/app/components/banner/banner-type.ts"
                 }
             ]
         },
         "groupedTypeAliases": {
+            "src/app/components/banner/banner.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<BannerComponent>",
+                    "file": "src/app/components/banner/banner.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "src/app/components/button-toggle/button-toggle.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ButtonToggleComponent>",
+                    "file": "src/app/components/button-toggle/button-toggle.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "src/app/components/checkbox/checkbox.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<CheckboxComponent>",
+                    "file": "src/app/components/checkbox/checkbox.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "src/app/components/input/input.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<InputComponent>",
+                    "file": "src/app/components/input/input.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "src/app/components/radio-group/radio-group.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<RadioGroupComponent>",
+                    "file": "src/app/components/radio-group/radio-group.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "src/app/components/textarea/textarea.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<TextareaComponent>",
+                    "file": "src/app/components/textarea/textarea.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "src/app/components/toggle/toggle.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ToggleComponent>",
+                    "file": "src/app/components/toggle/toggle.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
             "src/app/features/home/component/specs/home.component.stories.ts": [
                 {
                     "name": "Story",
@@ -2269,19 +3195,6 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<HomeComponent>",
                     "file": "src/app/features/home/component/specs/home.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
-            "src/app/features/material/component/specs/banner.component.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<BannerComponent>",
-                    "file": "src/app/features/material/component/specs/banner.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -2335,6 +3248,279 @@
                 "name": "appConfig",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/banner/banner.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/banner/banner.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/banner/banner.component.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/banner/banner.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "BannerComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/button-toggle/button-toggle.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/button-toggle/button-toggle.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/button-toggle/button-toggle.component.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/button-toggle/button-toggle.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonToggleComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/checkbox/checkbox.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/checkbox/checkbox.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/checkbox/checkbox.component.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/checkbox/checkbox.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CheckboxComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/input/input.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/input/input.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/input/input.component.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/input/input.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "InputComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/radio-group/radio-group.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/radio-group/radio-group.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Success",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/radio-group/radio-group.component.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/radio-group/radio-group.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "RadioGroupComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/textarea/textarea.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/textarea/textarea.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/textarea/textarea.component.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/textarea/textarea.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TextareaComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/toggle/toggle.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/toggle/toggle.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/toggle/toggle.component.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/toggle/toggle.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ToggleComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -2468,51 +3654,12 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/features/material/component/banner/banner.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "BannerComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
                 "filePath": "src/app/features/material/component/material.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "MaterialComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/8",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/features/material/component/specs/banner.component.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "meta",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/features/material/component/specs/banner.component.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Primary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/features/material/component/specs/banner.component.stories.ts",
-                "type": "type alias",
-                "linktype": "miscellaneous",
-                "linksubtype": "typealias",
-                "name": "Story",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
                 "status": "low"
             },
             {

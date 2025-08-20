@@ -18,7 +18,6 @@ export class RadioGroupComponent {
   @Output() onInputChange = new EventEmitter<BannerType>();
 
   inputChange(val) {
-    console.log(val)
     this.onInputChange.emit(val)
   }
 

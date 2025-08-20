@@ -23,6 +23,8 @@
     "@angular/platform-browser": "^20.1.0",
     "@angular/router": "^20.1.0",
     "@canvasjs/angular-stockcharts": "^1.2.0",
+    "@fontsource/material-icons": "^5.2.5",
+    "@fontsource/roboto": "^5.2.6",
     "canvasjs": "^1.8.3",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

@@ -111,15 +111,39 @@
         "storybook": {
           "builder": "@storybook/angular:start-storybook",
           "options": {
+            "configDir": ".storybook",
             "browserTarget": "ccAngularArchitecture:build",
+            "compodoc": true,
+            "compodocArgs": ["-e", "json", "-d", "."],
             "port": 6006,
-            "host": "0.0.0.0"
+            "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
+              "@fontsource/roboto/300.css",
+              "@fontsource/roboto/400.css",
+              "@fontsource/roboto/500.css",
+              "@fontsource/roboto/700.css",
+              "@fontsource/material-icons",
+              "src/styles.scss"
+            ]
           }
         },
         "build-storybook": {
           "builder": "@storybook/angular:build-storybook",
           "options": {
-            "browserTarget": "ccAngularArchitecture:build"
+            "configDir": ".storybook",
+            "browserTarget": "ccAngularArchitecture:build",
+            "compodoc": true,
+            "compodocArgs": ["-e", "json", "-d", "."],
+            "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
+              "@fontsource/roboto/300.css",
+              "@fontsource/roboto/400.css",
+              "@fontsource/roboto/500.css",
+              "@fontsource/roboto/700.css",
+              "@fontsource/material-icons",
+              "src/styles.scss"
+            ],
+            "outputDir": "storybook-static"
           }
         },
         "lint": {
