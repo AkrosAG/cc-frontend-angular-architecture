@@ -6,7 +6,7 @@
       </div>
       <div class="sub-section">
         <h3>Banner text</h3>
-        <app-input (onInputChange)="bannerValue=$event"></app-input>
+        <app-input (inputChange)="bannerValue=$event"></app-input>
       </div>
   </div>
   <div class="section">
@@ -16,7 +16,7 @@
     </div>
     <div class="sub-section">
       <h3>Banner Type</h3>
-      <app-radio-group (onInputChange)="selectedBannerType=$event"></app-radio-group>
+      <app-radio-group (inputChange)="selectedBannerType=$event"></app-radio-group>
     </div>
   </div>
   <div class="section">
@@ -26,7 +26,7 @@
     </div>
     <div class="sub-section">
       <h3>Toggle Banner</h3>
-      <app-toggle (onInputChange)="bannerEnabled=$event"></app-toggle>
+      <app-toggle (inputChange)="bannerEnabled=$event"></app-toggle>
     </div>
   </div>
   @if (bannerEnabled) {

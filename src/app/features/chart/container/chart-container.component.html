@@ -1,11 +1,13 @@
 <div class="chart-links-container">
   <h3>Canvas JS Chart Examples</h3>
 
-  <div *ngFor="let link of this.chartService.chartLinks$ | async" class="chart-link">
-    <button mat-flat-button color="primary"><a [routerLink]="[link.path]" (click)="onLinkSelect(link)">{{
+  @for (link of this.chartService.chartLinks$ | async; track link.id) {
+    <div class="chart-link">
+      <button mat-flat-button color="primary"><a [routerLink]="[link.path]" (click)="onLinkSelect(link)">{{
         link.label
       }}</a></button>
-  </div>
+    </div>
+  }
 </div>
 
 <app-chart

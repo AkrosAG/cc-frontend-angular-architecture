@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
-import {CommonModule} from '@angular/common';
+
 import {MatRadioModule} from '@angular/material/radio';
 import {MatCardModule} from '@angular/material/card';
 import {MatCheckboxModule} from '@angular/material/checkbox';
@@ -21,7 +21,6 @@ import {ToggleComponent} from '@appcomponents/toggle/toggle.component';
   selector: 'app-material',
   standalone: true,
   imports: [
-    CommonModule,
     MatCardModule,
     MatCheckboxModule,
     FormsModule,

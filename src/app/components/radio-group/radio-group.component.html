@@ -1,4 +1,4 @@
-<mat-radio-group [(ngModel)]="selectedBannerType" aria-label="Select a banner type" (ngModelChange)="inputChange($event)">
+<mat-radio-group [(ngModel)]="selectedBannerType" aria-label="Select a banner type" (ngModelChange)="onInputChange($event)">
   <mat-radio-button [color]="'primary'" [value]="BannerType.INFO" checked="true">Info</mat-radio-button>
   <mat-radio-button [color]="'primary'" [value]="BannerType.WARNING">Warning</mat-radio-button>
   <mat-radio-button [color]="'primary'" [value]="BannerType.ERROR">Error</mat-radio-button>
