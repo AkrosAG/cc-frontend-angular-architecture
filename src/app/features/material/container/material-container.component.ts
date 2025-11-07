@@ -10,8 +10,9 @@ import {Checkbox} from '@featuresmaterial/utils/Checkbox';
   selector: 'app-material-container',
   standalone: true,
   imports: [MaterialComponent, MatButtonModule, MatDividerModule, MatIconModule],
-  templateUrl: './material-container.component.html',
-  styleUrls: ['./material-container.component.scss'],
+  template: `
+    <app-material [toggleValue]="3" [checkboxes]="checkboxes" [textareaValue]="textareaValue"/>
+  `,
 })
 export class MaterialContainerComponent {
 
