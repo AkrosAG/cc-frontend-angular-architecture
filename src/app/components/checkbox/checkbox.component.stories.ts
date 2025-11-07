@@ -1,8 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/angular';
-import { BannerComponent } from '@appcomponents/banner/banner.component';
-import { BannerType } from '@appcomponents/banner/banner-type';
-import {ButtonToggleComponent} from "@appcomponents/button-toggle/button-toggle.component";
-import {CheckboxComponent} from "@appcomponents/checkbox/checkbox.component";
+import type {Meta, StoryObj} from '@storybook/angular';
+import {CheckboxComponent} from '@appcomponents/checkbox/checkbox.component';
 
 const meta: Meta<CheckboxComponent> = {
   title: 'UI-Library/Checkbox',

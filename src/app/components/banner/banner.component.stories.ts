@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/angular';
-import { BannerComponent } from '@appcomponents/banner/banner.component';
-import { BannerType } from '@appcomponents/banner/banner-type';
+import type {Meta, StoryObj} from '@storybook/angular';
+import {BannerComponent} from '@appcomponents/banner/banner.component';
+import {BannerType} from '@appcomponents/banner/banner-type';
 
 const meta: Meta<BannerComponent> = {
   title: 'UI-Library/Banner',

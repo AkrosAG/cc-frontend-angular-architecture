@@ -1,9 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/angular';
-import { BannerComponent } from '@appcomponents/banner/banner.component';
-import { BannerType } from '@appcomponents/banner/banner-type';
-import {ButtonToggleComponent} from "@appcomponents/button-toggle/button-toggle.component";
-import {InputComponent} from "@appcomponents/input/input.component";
-import {TextareaComponent} from "@appcomponents/textarea/textarea.component";
+import type {Meta, StoryObj} from '@storybook/angular';
+import {TextareaComponent} from '@appcomponents/textarea/textarea.component';
 
 const meta: Meta<TextareaComponent> = {
   title: 'UI-Library/Textarea',

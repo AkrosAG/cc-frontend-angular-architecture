@@ -1,7 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/angular';
-import { moduleMetadata } from '@storybook/angular';
-import { CommonModule } from '@angular/common';
-import { SnippetComponent } from '../snippet.component';
+import type {Meta, StoryObj} from '@storybook/angular';
+import {moduleMetadata} from '@storybook/angular';
+import {SnippetComponent} from '../snippet.component';
 
 const meta: Meta<SnippetComponent> = {
   title: 'ccAngularArchitecture/Snippets',

@@ -1,7 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/angular';
-import { BannerComponent } from '@appcomponents/banner/banner.component';
-import { BannerType } from '@appcomponents/banner/banner-type';
-import {ButtonToggleComponent} from "@appcomponents/button-toggle/button-toggle.component";
+import type {Meta, StoryObj} from '@storybook/angular';
+import {ButtonToggleComponent} from '@appcomponents/button-toggle/button-toggle.component';
 
 const meta: Meta<ButtonToggleComponent> = {
   title: 'UI-Library/ButtonToggle',

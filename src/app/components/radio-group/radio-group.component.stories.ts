@@ -1,6 +1,6 @@
 import type {Meta, StoryObj} from '@storybook/angular';
 import {BannerType} from '@appcomponents/banner/banner-type';
-import {RadioGroupComponent} from "@appcomponents/radio-group/radio-group.component";
+import {RadioGroupComponent} from '@appcomponents/radio-group/radio-group.component';
 
 const meta: Meta<RadioGroupComponent> = {
   title: 'UI-Library/RadioGroup',

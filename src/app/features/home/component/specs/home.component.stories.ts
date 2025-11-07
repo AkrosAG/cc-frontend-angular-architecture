@@ -1,7 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/angular';
-import { moduleMetadata } from '@storybook/angular';
-import { CommonModule } from '@angular/common';
-import { HomeComponent } from '@featureshome/component/home.component';
+import type {Meta, StoryObj} from '@storybook/angular';
+import {moduleMetadata} from '@storybook/angular';
+import {HomeComponent} from '@featureshome/component/home.component';
 
 const meta: Meta<HomeComponent> = {
   title: 'ccAngularArchitecture/Home',
