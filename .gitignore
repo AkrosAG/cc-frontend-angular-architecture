@@ -5,6 +5,7 @@
 /tmp
 /out-tsc
 /bazel-out
+/storybook-static
 
 # Node
 /node_modules
@@ -41,3 +42,6 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+*storybook.log
+documentation.json

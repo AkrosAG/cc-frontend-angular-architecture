@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {HomeService} from '../service/home.service';
 import {HomeComponent} from '../component/home.component';
@@ -15,5 +15,5 @@ import {HomeComponent} from '../component/home.component';
   `
 })
 export class HomeContainerComponent {
-  constructor(public snippetsService: HomeService) {}
+  snippetsService = inject(HomeService);
 }

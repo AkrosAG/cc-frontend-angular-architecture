@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { NavItem } from '../component/api/nav-item';
 import { Router } from '@angular/router';
@@ -7,7 +7,9 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class SidenavService {
-  constructor(router: Router) {
+  constructor() {
+    const router = inject(Router);
+
     this.activeItem$.subscribe((val: NavItem) => {
       router.navigate([val.path]);
     });
@@ -15,7 +17,7 @@ export class SidenavService {
   navItems$: Observable<NavItem[]> = of([
     { label: 'Snippets', id: 1, path: '/' },
     {
-      label: 'Chart',
+      label: 'Charts',
       id: 2,
       path: '/chart',
       isChart: true,
@@ -26,6 +28,7 @@ export class SidenavService {
         { label: 'Doughnut', id: 6, path: '/chart/doughnut', isChart: true },
       ],
     },
+    { label: 'Material playground', id: 7, path: '/material' },
   ]);
   activeItemSubject$: BehaviorSubject<NavItem> = new BehaviorSubject({
     label: 'Snippets',

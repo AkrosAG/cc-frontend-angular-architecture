@@ -1,27 +1,35 @@
-<div class="chart-container" *ngIf="activeChart === 3">
-  <canvasjs-chart
-    [options]="columnChartOptions"
-    [styles]="{ width: '100%', height: '600px' }"
-  ></canvasjs-chart>
-</div>
+@if (activeChart === 3) {
+  <div class="chart-container">
+    <canvasjs-chart
+      [options]="columnChartOptions"
+      [styles]="{ width: '100%', height: '440px' }"
+    ></canvasjs-chart>
+  </div>
+}
 
-<div class="chart-container" *ngIf="activeChart === 4">
-  <canvasjs-chart
-    [options]="bubbleChartOptions"
-    [styles]="{ width: '100%', height: '600px' }"
-  ></canvasjs-chart>
-</div>
+@if (activeChart === 4) {
+  <div class="chart-container">
+    <canvasjs-chart
+      [options]="bubbleChartOptions"
+      [styles]="{ width: '100%', height: '440px' }"
+    ></canvasjs-chart>
+  </div>
+}
 
-<div class="chart-container" *ngIf="activeChart === 5">
-  <canvasjs-stockchart
-    [options]="stockChartOptions"
-    [styles]="{ width: '100%', height: '600px' }"
-  ></canvasjs-stockchart>
-</div>
+@if (activeChart === 5) {
+  <div class="chart-container">
+    <canvasjs-stockchart
+      [options]="stockChartOptions"
+      [styles]="{ width: '100%', height: '440px' }"
+    ></canvasjs-stockchart>
+  </div>
+}
 
-<div class="chart-container" *ngIf="activeChart === 6">
-  <canvasjs-chart
-    [options]="doughnutChartOptions"
-    [styles]="{ width: '100%', height: '600px' }"
-  ></canvasjs-chart>
-</div>
+@if (activeChart === 6) {
+  <div class="chart-container">
+    <canvasjs-chart
+      [options]="doughnutChartOptions"
+      [styles]="{ width: '100%', height: '440px' }"
+    ></canvasjs-chart>
+  </div>
+}

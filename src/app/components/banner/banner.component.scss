@@ -1,0 +1,23 @@
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  color: white;
+  height: 40px;
+  padding: 10px;
+
+  &.info {
+    background-color: #566df3;
+  }
+  &.warning {
+    background-color: #f1bf61;
+  }
+  &.error {
+    background-color: #ff2424;
+  }
+  &.success {
+    background-color: #6ddc0f;
+  }
+
+}

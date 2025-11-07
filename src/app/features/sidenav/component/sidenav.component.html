@@ -1,20 +1,21 @@
 <ul>
-  <ng-container *ngFor="let item of navItems">
+  @for (item of navItems; track item.id) {
     <li
       (click)="onItemSelect(item)"
       [ngClass]="{ selected: activeItem.id === item.id }"
     >
       {{ item.label }}
     </li>
-    <ng-container *ngIf="item.items">
-      <li
-        *ngFor="let item of item.items"
-        class="sub-item"
-        (click)="onItemSelect(item)"
-        [ngClass]="{ selected: activeItem.id === item.id }"
-      >
-        {{ item.label }}
-      </li>
-    </ng-container>
-  </ng-container>
+    @if (item.items) {
+      @for (item of item.items; track item.id) {
+        <li
+          class="sub-item"
+          (click)="onItemSelect(item)"
+          [ngClass]="{ selected: activeItem.id === item.id }"
+        >
+          {{ item.label }}
+        </li>
+      }
+    }
+  }
 </ul>

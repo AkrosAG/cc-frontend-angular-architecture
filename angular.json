@@ -70,12 +70,15 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "buildTarget": "ccAngularArchitecture:build"
+          },
           "configurations": {
             "production": {
-              "browserTarget": "ccAngularArchitecture:build:production"
+              "buildTarget": "ccAngularArchitecture:build:production"
             },
             "development": {
-              "browserTarget": "ccAngularArchitecture:build:development"
+              "buildTarget": "ccAngularArchitecture:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -110,8 +113,18 @@
           "options": {
             "configDir": ".storybook",
             "browserTarget": "ccAngularArchitecture:build",
-            "compodoc": false,
-            "port": 6006
+            "compodoc": true,
+            "compodocArgs": ["-e", "json", "-d", "."],
+            "port": 6006,
+            "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
+              "@fontsource/roboto/300.css",
+              "@fontsource/roboto/400.css",
+              "@fontsource/roboto/500.css",
+              "@fontsource/roboto/700.css",
+              "@fontsource/material-icons",
+              "src/styles.scss"
+            ]
           }
         },
         "build-storybook": {
@@ -119,7 +132,17 @@
           "options": {
             "configDir": ".storybook",
             "browserTarget": "ccAngularArchitecture:build",
-            "compodoc": false,
+            "compodoc": true,
+            "compodocArgs": ["-e", "json", "-d", "."],
+            "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
+              "@fontsource/roboto/300.css",
+              "@fontsource/roboto/400.css",
+              "@fontsource/roboto/500.css",
+              "@fontsource/roboto/700.css",
+              "@fontsource/material-icons",
+              "src/styles.scss"
+            ],
             "outputDir": "storybook-static"
           }
         },

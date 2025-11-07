@@ -1,0 +1,37 @@
+<div class="material-container">
+  <div class="section">
+    <div class="sub-section">
+      <h3>Button Toggle</h3>
+        <app-button-toggle [toggleValue]="toggleValue"></app-button-toggle>
+      </div>
+      <div class="sub-section">
+        <h3>Banner text</h3>
+        <app-input (inputChange)="bannerValue=$event"></app-input>
+      </div>
+  </div>
+  <div class="section">
+    <div class="sub-section">
+      <h3>Checkbox</h3>
+      <app-checkbox [checkboxes]="checkboxes"></app-checkbox>
+    </div>
+    <div class="sub-section">
+      <h3>Banner Type</h3>
+      <app-radio-group (inputChange)="selectedBannerType=$event"></app-radio-group>
+    </div>
+  </div>
+  <div class="section">
+    <div class="sub-section">
+      <h3>Textarea</h3>
+      <app-textarea [textareaValue]="textareaValue"></app-textarea>
+    </div>
+    <div class="sub-section">
+      <h3>Toggle Banner</h3>
+      <app-toggle (inputChange)="bannerEnabled=$event"></app-toggle>
+    </div>
+  </div>
+  @if (bannerEnabled) {
+    <div class="section full">
+      <app-banner [text]="bannerValue" [bannerType]="selectedBannerType"></app-banner>
+    </div>
+  }
+</div>

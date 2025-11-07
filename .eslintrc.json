@@ -46,5 +46,8 @@
         "@angular-eslint/template/interactive-supports-focus": "off"
       }
     }
+  ],
+  "extends": [
+    "plugin:storybook/recommended"
   ]
 }

@@ -22,13 +22,41 @@ export const routes: Routes = [
         (mod) => mod.ChartContainerComponent,
       ),
     children: [
-      ...['bubble', 'column', 'stock', 'doughnut'].map((path) => ({
-        path,
+      {
+        path: 'bubble',
         loadComponent: () =>
           import('./features/chart/container/chart-container.component').then(
             (mod) => mod.ChartContainerComponent,
           ),
-      })),
+      },
+      {
+        path: 'column',
+        loadComponent: () =>
+          import('./features/chart/container/chart-container.component').then(
+            (mod) => mod.ChartContainerComponent,
+          ),
+      },
+      {
+        path: 'stock',
+        loadComponent: () =>
+          import('./features/chart/container/chart-container.component').then(
+            (mod) => mod.ChartContainerComponent,
+          ),
+      },
+      {
+        path: 'doughnut',
+        loadComponent: () =>
+          import('./features/chart/container/chart-container.component').then(
+            (mod) => mod.ChartContainerComponent,
+          ),
+      },
     ],
+  },
+  {
+    path: 'material',
+    loadComponent: () =>
+      import('./features/material/container/material-container.component').then(
+        (mod) => mod.MaterialContainerComponent,
+      ),
   },
 ];

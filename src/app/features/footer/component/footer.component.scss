@@ -6,12 +6,15 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
+  color: $main-text-color;
   background-color: $secondary-background;
   box-shadow: 0px -2px 15px -11px $black;
   height: 30px;
   .copyright {
+    text-align: center;
+    font-weight: bold;
     height: 30px;
     line-height: 30px;
-    font-size: 12px;
+    font-size: 13px;
   }
 }
