@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { NavItem } from '../component/api/nav-item';
 import { Router } from '@angular/router';
@@ -7,7 +7,9 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class SidenavService {
-  constructor(router: Router) {
+  constructor() {
+    const router = inject(Router);
+
     this.activeItem$.subscribe((val: NavItem) => {
       router.navigate([val.path]);
     });

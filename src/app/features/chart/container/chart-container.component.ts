@@ -1,5 +1,5 @@
 import {SidenavService} from '@features/sidenav/service/sidenav.service';
-import {Component} from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {ChartComponent} from '../component/chart.component';
 import {ChartService} from '../service/chart.service';
@@ -17,11 +17,9 @@ import {MatButtonModule} from '@angular/material/button';
   styleUrls: ['./chart-container.component.scss'],
 })
 export class ChartContainerComponent {
+  chartService = inject(ChartService);
+  sidenavService = inject(SidenavService);
 
-  constructor(
-    public chartService: ChartService,
-    public sidenavService: SidenavService,
-  ) {}
 
   public onLinkSelect(navItem: NavItem) {
     this.sidenavService.activeItemSubject$.next(navItem);

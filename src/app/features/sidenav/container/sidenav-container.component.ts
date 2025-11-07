@@ -1,5 +1,5 @@
 import {ChartService} from './../../chart/service/chart.service';
-import {Component} from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {SidenavComponent} from '../component/sidenav.component';
 import {SidenavService} from '../service/sidenav.service';
@@ -19,10 +19,9 @@ import {NavItem} from '../component/api/nav-item';
   styles: [],
 })
 export class SidenavContainerComponent {
-  constructor(
-    public sidenavService: SidenavService,
-    public chartService: ChartService,
-  ) {}
+  sidenavService = inject(SidenavService);
+  chartService = inject(ChartService);
+
 
   public onItemSelect(navItem: NavItem) {
     this.sidenavService.activeItemSubject$.next(navItem);

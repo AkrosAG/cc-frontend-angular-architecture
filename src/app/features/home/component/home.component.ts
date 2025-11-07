@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {Snippet, SnippetComponent} from '@features/snippets';
 import {FormBuilder, ReactiveFormsModule, Validators} from '@angular/forms';
@@ -12,7 +12,8 @@ import {FormBuilder, ReactiveFormsModule, Validators} from '@angular/forms';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent {
-  constructor(private fb: FormBuilder) {}
+  private readonly fb = inject(FormBuilder);
+
 
   @Input() snippets: Snippet[];
 

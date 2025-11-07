@@ -1,11 +1,10 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
-import { SidenavComponent } from '@features/sidenav/component/sidenav.component';
-import { SidenavContainerComponent } from '@features/sidenav/container/sidenav-container.component';
-import { HeaderComponent } from '@features/header/component/header.component';
-import { FooterComponent } from '@features/footer/component/footer.component';
-import { AppService } from '@services/app/app.service';
+import {Component, inject} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {RouterOutlet} from '@angular/router';
+import {SidenavContainerComponent} from '@features/sidenav/container/sidenav-container.component';
+import {HeaderComponent} from '@features/header/component/header.component';
+import {FooterComponent} from '@features/footer/component/footer.component';
+import {AppService} from '@services/app/app.service';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +12,6 @@ import { AppService } from '@services/app/app.service';
   imports: [
     CommonModule,
     RouterOutlet,
-    SidenavComponent,
     SidenavContainerComponent,
     HeaderComponent,
     FooterComponent,
@@ -22,5 +20,5 @@ import { AppService } from '@services/app/app.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  constructor(public appService: AppService) {}
+  appService = inject(AppService);
 }
