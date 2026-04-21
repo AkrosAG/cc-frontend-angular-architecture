@@ -1,6 +1,9 @@
-<mat-radio-group [(ngModel)]="selectedBannerType" aria-label="Select a banner type" (ngModelChange)="onInputChange($event)">
-  <mat-radio-button [color]="'primary'" [value]="BannerType.INFO" checked="true">Info</mat-radio-button>
-  <mat-radio-button [color]="'primary'" [value]="BannerType.WARNING">Warning</mat-radio-button>
-  <mat-radio-button [color]="'primary'" [value]="BannerType.ERROR">Error</mat-radio-button>
-  <mat-radio-button [color]="'primary'" [value]="BannerType.SUCCESS">Success</mat-radio-button>
-</mat-radio-group>
+@if (radioGroupValues) {
+  <mat-radio-group  [(ngModel)]="selectedBannerType" aria-label="Select a banner type" (ngModelChange)="onInputChange($event)">
+    @for (radioButton of radioGroupValues; track radioButton.label) {
+      <mat-radio-button [color]="'primary'" [value]="radioButton.value" checked="true">{{radioButton.label}}</mat-radio-button>
+    }
+  </mat-radio-group>
+} @else {
+  <span class="no-data">No values for the Button Toggle</span>
+}

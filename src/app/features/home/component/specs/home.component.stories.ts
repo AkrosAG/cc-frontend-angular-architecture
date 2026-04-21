@@ -3,7 +3,7 @@ import {moduleMetadata} from '@storybook/angular';
 import {HomeComponent} from '@featureshome/component/home.component';
 
 const meta: Meta<HomeComponent> = {
-  title: 'ccAngularArchitecture/Home',
+  title: 'Pages/Snippets',
   component: HomeComponent,
   decorators: [
     moduleMetadata({

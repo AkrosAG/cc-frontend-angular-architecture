@@ -1,12 +1,15 @@
 <div class="material-container">
+  <div class="title">
+    Material Playground
+  </div>
   <div class="section">
     <div class="sub-section">
       <h3>Button Toggle</h3>
-        <app-button-toggle [toggleValue]="toggleValue"></app-button-toggle>
+        <app-button-toggle [buttonToggleValues]="buttonToggleValues" [toggleValue]="toggleValue"></app-button-toggle>
       </div>
       <div class="sub-section">
         <h3>Banner text</h3>
-        <app-input (inputChange)="bannerValue=$event"></app-input>
+        <app-input [bannerValue]="bannerValue" (inputChange)="bannerValue=$event"></app-input>
       </div>
   </div>
   <div class="section">
@@ -16,20 +19,24 @@
     </div>
     <div class="sub-section">
       <h3>Banner Type</h3>
-      <app-radio-group (inputChange)="selectedBannerType=$event"></app-radio-group>
+      <app-radio-group
+        [selectedBannerType]="selectedBannerType"
+        [radioGroupValues]="radioGroupValues"
+        (inputChange)="onRadioOptionChange($event)">
+      </app-radio-group>
     </div>
   </div>
   <div class="section">
     <div class="sub-section">
       <h3>Textarea</h3>
-      <app-textarea [textareaValue]="textareaValue"></app-textarea>
+      <app-textarea [textareaValue]="textareaValue ?? ''"></app-textarea>
     </div>
     <div class="sub-section">
       <h3>Toggle Banner</h3>
-      <app-toggle (inputChange)="bannerEnabled=$event"></app-toggle>
+      <app-toggle [bannerEnabled]="bannerEnabled" (inputChange)="showBanner=$event" [showBanner]="showBanner"></app-toggle>
     </div>
   </div>
-  @if (bannerEnabled) {
+  @if (showBanner) {
     <div class="section full">
       <app-banner [text]="bannerValue" [bannerType]="selectedBannerType"></app-banner>
     </div>

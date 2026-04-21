@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 
 import {MatButtonToggleGroup, MatButtonToggleModule} from '@angular/material/button-toggle';
+import {ValueSelector} from '@featuresmaterial/utils/ValueSelector';
 
 @Component({
   selector: 'app-button-toggle',
@@ -11,4 +12,5 @@ import {MatButtonToggleGroup, MatButtonToggleModule} from '@angular/material/but
 })
 export class ButtonToggleComponent {
   @Input() toggleValue: number;
+  @Input() buttonToggleValues: ValueSelector[];
 }
