@@ -1,5 +1,10 @@
-@for (checkbox of checkboxes; track checkbox; let i = $index) {
-  <mat-checkbox class="checkbox" [color]="'primary'"
-                [checked]="checkbox.value" [labelPosition]="'before'">{{ checkbox.label }}
-  </mat-checkbox>
+@if (checkboxes) {
+  @for (checkbox of checkboxes; track checkbox; let i = $index) {
+    <mat-checkbox class="checkbox" [color]="'primary'"
+                  [checked]="checkbox.value" [labelPosition]="'before'">{{ checkbox.label }}
+    </mat-checkbox>
+  }
+}
+@else {
+  <span class="no-data">No values for the Button Toggle</span>
 }

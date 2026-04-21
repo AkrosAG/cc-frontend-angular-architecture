@@ -1,8 +1,9 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 import {MatRadioButton, MatRadioGroup} from '@angular/material/radio';
 import {BannerType} from '@appcomponents/banner/banner-type';
 import {FormsModule} from '@angular/forms';
+import {ValueSelector} from '@featuresmaterial/utils/ValueSelector';
 
 @Component({
   selector: 'app-radio-group',
@@ -13,13 +14,14 @@ import {FormsModule} from '@angular/forms';
 })
 export class RadioGroupComponent {
 
-  selectedBannerType: BannerType = BannerType.INFO;
+  @Input()
+  selectedBannerType: BannerType;
 
+  @Input() radioGroupValues: ValueSelector[];
   @Output() inputChange = new EventEmitter<BannerType>();
 
-  onInputChange(val) {
+  onInputChange(val: BannerType) {
     this.inputChange.emit(val)
   }
 
-  protected readonly BannerType = BannerType;
 }

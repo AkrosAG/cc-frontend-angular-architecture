@@ -1,7 +1,9 @@
 <mat-button-toggle-group name="toggleGroup" aria-label="Toggle Group">
-  <mat-button-toggle [checked]="toggleValue === 1">Value 1</mat-button-toggle>
-  <mat-button-toggle [checked]="toggleValue === 2">Value 2</mat-button-toggle>
-  <mat-button-toggle [checked]="toggleValue === 3">Value 3</mat-button-toggle>
-  <mat-button-toggle [checked]="toggleValue === 4">Value 4</mat-button-toggle>
-  <mat-button-toggle [checked]="toggleValue === 5">Value 5</mat-button-toggle>
+  @if (buttonToggleValues) {
+    @for (button of buttonToggleValues; track button.label) {
+      <mat-button-toggle [checked]="toggleValue === button.value">{{button.label}}</mat-button-toggle>
+    }
+  } @else {
+    <span class="no-data">No values for the Button Toggle</span>
+  }
 </mat-button-toggle-group>

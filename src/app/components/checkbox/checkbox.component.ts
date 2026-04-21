@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core';
 
 import {MatCheckbox} from '@angular/material/checkbox';
-import {Checkbox} from '@featuresmaterial/utils/Checkbox';
+import {ValueSelector} from '@featuresmaterial/utils/ValueSelector';
 
 @Component({
   selector: 'app-checkbox',
@@ -12,5 +12,5 @@ import {Checkbox} from '@featuresmaterial/utils/Checkbox';
 })
 export class CheckboxComponent {
 
-  @Input() checkboxes: Checkbox[];
+  @Input() checkboxes: ValueSelector[];
 }

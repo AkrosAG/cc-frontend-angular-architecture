@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 
 import {CanvasJSAngularStockChartsModule} from '@canvasjs/angular-stockcharts';

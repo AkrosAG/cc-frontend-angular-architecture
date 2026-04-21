@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 import {FormsModule} from '@angular/forms';
 import {MatFormField, MatInput, MatLabel} from '@angular/material/input';
@@ -12,11 +12,12 @@ import {MatFormField, MatInput, MatLabel} from '@angular/material/input';
 })
 export class InputComponent {
 
+  @Input()
   bannerValue: string;
 
   @Output() inputChange = new EventEmitter<string>();
 
-  onInputChange(val) {
+  onInputChange(val: string) {
     this.inputChange.emit(val)
   }
 

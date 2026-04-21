@@ -4,7 +4,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatCardModule} from '@angular/material/card';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {FormsModule} from '@angular/forms';
-import {Checkbox} from '@featuresmaterial/utils/Checkbox';
+import {ValueSelector} from '@featuresmaterial/utils/ValueSelector';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
@@ -42,12 +42,18 @@ import {ToggleComponent} from '@appcomponents/toggle/toggle.component';
 })
 export class MaterialComponent {
   @Input() toggleValue: number;
-  @Input() checkboxes: Checkbox[];
+  @Input() checkboxes: ValueSelector[];
   @Input() textareaValue: string;
+  @Input() buttonToggleValues: ValueSelector[];
+  @Input() radioGroupValues: ValueSelector[];
 
   bannerEnabled = false;
+  showBanner = false;
   bannerValue: string;
-  selectedBannerType: BannerType = BannerType.INFO;
+  selectedBannerType: BannerType;
 
-  protected readonly BannerType = BannerType;
+  onRadioOptionChange(e: BannerType) {
+    this.selectedBannerType = e;
+    this.bannerEnabled = true;
+  }
 }

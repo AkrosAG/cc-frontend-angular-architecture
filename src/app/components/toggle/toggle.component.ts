@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 import {MatSlideToggle} from '@angular/material/slide-toggle';
 import {FormsModule} from '@angular/forms';
@@ -11,11 +11,15 @@ import {FormsModule} from '@angular/forms';
   styleUrl: './toggle.component.scss'
 })
 export class ToggleComponent {
+  @Input()
   bannerEnabled: boolean;
 
   @Output() inputChange = new EventEmitter<boolean>();
 
-  onInputChange(val) {
+  @Input()
+  showBanner = false;
+
+  onInputChange(val: boolean) {
     this.inputChange.emit(val)
   }
 

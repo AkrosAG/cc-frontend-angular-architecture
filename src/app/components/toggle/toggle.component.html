@@ -1,1 +1,6 @@
-<mat-slide-toggle [color]="'primary'" [(ngModel)]="bannerEnabled" (ngModelChange)="onInputChange($event)">Show Banner</mat-slide-toggle>
+<mat-slide-toggle
+  [disabled]="!bannerEnabled"
+  [color]="'primary'"
+  [(ngModel)]="showBanner"
+  (ngModelChange)="onInputChange($event)"
+>Show Banner</mat-slide-toggle>

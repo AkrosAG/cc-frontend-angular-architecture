@@ -1,9 +1,9 @@
 import type {Meta, StoryObj} from '@storybook/angular';
 import {moduleMetadata} from '@storybook/angular';
-import {SnippetComponent} from '../snippet.component';
+import {SnippetComponent} from '@featuressnippets';
 
 const meta: Meta<SnippetComponent> = {
-  title: 'ccAngularArchitecture/Snippets',
+  title: 'UI-Library/Snippets',
   component: SnippetComponent,
   decorators: [
     moduleMetadata({
